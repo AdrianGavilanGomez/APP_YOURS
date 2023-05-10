@@ -1,4 +1,5 @@
 import 'package:app_yours/forgotPassword.dart';
+import 'package:app_yours/pantallaLogin.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -97,6 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 // accion del boton
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PantallaLogin()),
+                );
               },
               child: const Text('INICIAR SESIÓN'),
               style: ElevatedButton.styleFrom(
@@ -110,6 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 // accion del boton
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PantallaLogin()),
+                );
               },
               child: const Text('CREAR CUENTA'),
               style: ElevatedButton.styleFrom(
