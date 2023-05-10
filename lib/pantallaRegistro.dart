@@ -68,7 +68,7 @@ class _PantallaRegistroState extends State<PantallaRegistro> {
                     // accion del buton
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MyApp()),
+                      MaterialPageRoute(builder: (context) => PantallaLogin()),
                     );
                   },
                   child: const Text('REGISTRARSE'),
