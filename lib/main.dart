@@ -1,5 +1,6 @@
 import 'package:app_yours/forgotPassword.dart';
 import 'package:app_yours/pantallaLogin.dart';
+import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -117,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // accion del boton
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PantallaLogin()),
+                  MaterialPageRoute(builder: (context) => PantallaRegistro()),
                 );
               },
               child: const Text('CREAR CUENTA'),
@@ -129,23 +130,6 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const SizedBox(height: 20), //agregar 20pix de espacio
-            GestureDetector(
-              onTap: () {
-                // Acción al presionar el texto
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ForgotPassword()),
-                );
-              },
-              child: const Text(
-                '¿HAS OLVIDADO TU CONTRASEÑA?',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.black,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            ),
             ],
         ),
       ),
