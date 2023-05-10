@@ -1,58 +1,50 @@
 import 'package:app_yours/main.dart';
 import 'package:flutter/material.dart';
 
-class PantallaLogin extends StatelessWidget {
+class PantallaLogin extends StatefulWidget {
   const PantallaLogin({Key? key}) : super(key: key);
+
+  @override
+  _PantallaLoginState createState() => _PantallaLoginState();
+}
+
+class _PantallaLoginState extends State<PantallaLogin> {
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 35), //establecemos el padding horizontal
-          child: Center(
+          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 100), //establecemos el padding horizontal
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset('assets/images/letras_yourss.png'),
-                const SizedBox(height: 40),
-                const Text(
-                  '¿HAS OLVIDADO TU CONTRASEÑA?',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-                const SizedBox(height: 50),
-                const Text(
-                  'Introduce tu dirección de correo electrónico para poder reestablecer el acceso a tu cuenta',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
-                const SizedBox(height: 40), // Añade un espacio entre el Text y el TextField
-                TextField(
+                const SizedBox(height: 60),
+                const TextField(
                   decoration: InputDecoration(
-                    labelText: 'Introduce tu dirección de correo electrónico',
+                    labelText: 'Correo electrónico',
+                    prefixIcon: Icon(Icons.email),
                   ),
                 ),
-                const SizedBox(height: 30),
-                ElevatedButton(
-                  onPressed: () {
-                    // accion del buton
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MyApp()),
-                    );
-                  },
-                  child: const Text('SIGUIENTE'),
-                  style: ElevatedButton.styleFrom(
-                    textStyle: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
+                const SizedBox(height: 20),
+                TextField(
+                  obscureText: _obscureText,
+                  decoration: InputDecoration(
+                    labelText: 'Contraseña',
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                      icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+                      onPressed: () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
                     ),
                   ),
                 ),
-                const SizedBox(height: 40), //agregar 20pix de espacio
+                const SizedBox(height: 30), // Añade un espacio entre el Text y el TextField
                 GestureDetector(
                   onTap: () {
                     // Acción al presionar el texto
@@ -62,11 +54,50 @@ class PantallaLogin extends StatelessWidget {
                     );
                   },
                   child: const Text(
-                    'VOLVER AL INICIO DE SESIÓN',
+                    '¿HAS OLVIDADO TU CONTRASEÑA?',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.black,
                       decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 40), //agregar 20pix de espac
+                ElevatedButton(
+                  onPressed: () {
+                    // accion del buton
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyApp()),
+                    );
+                  },
+                  child: const Text('INICIAR SESIÓN'),
+                  style: ElevatedButton.styleFrom(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 80), //agregamos distancia de 80pix
+                const Text(
+                  '¿NO ESTÁS REGISTRADO?',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.black,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+                const SizedBox(height: 10), //agregamos distancia de 10pix
+                ElevatedButton(
+                  onPressed: () {
+                    //accion del boton
+                  },
+                  child: const Text('REGISTRARSE'),
+                  style: ElevatedButton.styleFrom(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
                     ),
                   ),
                 ),
