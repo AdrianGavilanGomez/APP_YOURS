@@ -1,45 +1,68 @@
-import 'package:app_yours/forgotPassword.dart';
 import 'package:app_yours/main.dart';
-import 'package:app_yours/pantallaFeed.dart';
-import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/pantallaLogin.dart';
 import 'package:flutter/material.dart';
 
-class PantallaLogin extends StatefulWidget {
-  const PantallaLogin({Key? key}) : super(key: key);
+class PantallaFeed extends StatefulWidget {
+  const PantallaFeed({Key? key}) : super(key: key);
 
   @override
-  _PantallaLoginState createState() => _PantallaLoginState();
+  _PantallaFeedState createState() => _PantallaFeedState();
 }
 
-class _PantallaLoginState extends State<PantallaLogin> {
+class _PantallaFeedState extends State<PantallaFeed> {
   bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 100), //establecemos el padding horizontal
+          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 80), //establecemos el padding horizontal
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                    MaterialPageRoute(builder: (context) => MyApp()),
-                    );
-                },
+                Container(
                   child: Image.asset('assets/images/letras_yourss.png'),
+                  width: 209,
+                  height: 36,
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 20),
+                const Text(
+                  'COMUNIDAD',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+                Container(
+                  child: Image.asset('assets/images/post_yours.png')
+                ),
+                const TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Nombre',
+                    prefixIcon: Icon(Icons.person),
+                  ),
+                ),
+                const TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Apellidos',
+                    prefixIcon: Icon(Icons.person),
+                  ),
+                ),
+                const TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Fecha de nacimiento',
+                    prefixIcon: Icon(Icons.date_range),
+                  ),
+                ),
                 const TextField(
                   decoration: InputDecoration(
                     labelText: 'Correo electrónico',
                     prefixIcon: Icon(Icons.email),
                   ),
                 ),
-                const SizedBox(height: 20),
                 TextField(
                   obscureText: _obscureText,
                   decoration: InputDecoration(
@@ -55,34 +78,16 @@ class _PantallaLoginState extends State<PantallaLogin> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 30), // Añade un espacio entre el Text y el TextField
-                GestureDetector(
-                  onTap: () {
-                    // Acción al presionar el texto
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ForgotPassword()),
-                    );
-                  },
-                  child: const Text(
-                    '¿HAS OLVIDADO TU CONTRASEÑA?',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.black,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                ),
                 const SizedBox(height: 40), //agregar 20pix de espac
                 ElevatedButton(
                   onPressed: () {
                     // accion del buton
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaFeed()),
+                      MaterialPageRoute(builder: (context) => PantallaLogin()),
                     );
                   },
-                  child: const Text('INICIAR SESIÓN'),
+                  child: const Text('REGISTRARSE'),
                   style: ElevatedButton.styleFrom(
                     textStyle: const TextStyle(
                       color: Colors.black,
@@ -90,9 +95,9 @@ class _PantallaLoginState extends State<PantallaLogin> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 80), //agregamos distancia de 80pix
+                const SizedBox(height: 40), //agregamos distancia de 80pix
                 const Text(
-                  '¿NO ESTÁS REGISTRADO?',
+                  '¿YA TIENES CUENTA?',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.black,
@@ -105,10 +110,10 @@ class _PantallaLoginState extends State<PantallaLogin> {
                     //accion del boton
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaRegistro()),
+                      MaterialPageRoute(builder: (context) => PantallaLogin()),
                     );
                   },
-                  child: const Text('REGISTRARSE'),
+                  child: const Text('INICIAR SESIÓN'),
                   style: ElevatedButton.styleFrom(
                     textStyle: const TextStyle(
                       color: Colors.black,
