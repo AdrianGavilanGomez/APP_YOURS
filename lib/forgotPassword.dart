@@ -1,5 +1,6 @@
 import 'package:app_yours/main.dart';
 import 'package:app_yours/pantallaLogin.dart';
+import 'package:app_yours/pantallaPerfil.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatelessWidget {
@@ -59,7 +60,7 @@ class ForgotPassword extends StatelessWidget {
                   // Acción al presionar el texto
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PantallaLogin()),
+                    MaterialPageRoute(builder: (context) => PantallaPerfil()),
                   );
                 },
                 child: const Text(
