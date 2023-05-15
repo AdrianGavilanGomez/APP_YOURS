@@ -11,120 +11,82 @@ class PantallaFeed extends StatefulWidget {
 
 class _PantallaFeedState extends State<PantallaFeed> {
   bool _obscureText = true;
+  int _selectedIndex = 0;
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text('Feed'),
+    Text('Buscar'),
+    Text('Perfil'),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 80), //establecemos el padding horizontal
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  child: Image.asset('assets/images/letras_yourss.png'),
-                  width: 209,
-                  height: 36,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 80),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: Image.asset('assets/images/letras_yourss.png'),
+                width: 209,
+                height: 36,
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'COMUNIDAD',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.underline,
                 ),
-                const SizedBox(height: 20),
-                const Text(
-                  'COMUNIDAD',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    decoration: TextDecoration.underline,
-                  ),
+              ),
+              Container(
+                child: Image.asset('assets/images/logo_yourss.png'),
+              ),
+              Text(
+                '@ivangallegofernandez',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
-                Container(
-                  child: Image.asset('assets/images/post_yours.png')
+              ),
+              const SizedBox(height: 35),
+              Container(
+                child: const Text(
+                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
                 ),
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Nombre',
-                    prefixIcon: Icon(Icons.person),
-                  ),
-                ),
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Apellidos',
-                    prefixIcon: Icon(Icons.person),
-                  ),
-                ),
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Fecha de nacimiento',
-                    prefixIcon: Icon(Icons.date_range),
-                  ),
-                ),
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Correo electrónico',
-                    prefixIcon: Icon(Icons.email),
-                  ),
-                ),
-                TextField(
-                  obscureText: _obscureText,
-                  decoration: InputDecoration(
-                    labelText: 'Contraseña',
-                    prefixIcon: Icon(Icons.lock),
-                    suffixIcon: IconButton(
-                      icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
-                      onPressed: () {
-                        setState(() {
-                          _obscureText = !_obscureText;
-                        });
-                      },
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 40), //agregar 20pix de espac
-                ElevatedButton(
-                  onPressed: () {
-                    // accion del buton
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => PantallaLogin()),
-                    );
-                  },
-                  child: const Text('REGISTRARSE'),
-                  style: ElevatedButton.styleFrom(
-                    textStyle: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 40), //agregamos distancia de 80pix
-                const Text(
-                  '¿YA TIENES CUENTA?',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-                const SizedBox(height: 10), //agregamos distancia de 10pix
-                ElevatedButton(
-                  onPressed: () {
-                    //accion del boton
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => PantallaLogin()),
-                    );
-                  },
-                  child: const Text('INICIAR SESIÓN'),
-                  style: ElevatedButton.styleFrom(
-                    textStyle: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        )
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Feed',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Buscar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Perfil',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
