@@ -60,7 +60,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
                   CircleAvatar(
                     radius: 50,
                     backgroundImage: AssetImage(
-                      'assets/images/candado.png',
+                      'assets/images/chicofeo.png',
                     ),
                   ),
                   const Spacer(),
@@ -92,10 +92,28 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
             const Text(
               'Ivan Gallego',
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                // Acción al presionar el buton
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PantallaLogin()),
+                );
+              },
+              child: const Text('CERRAR SESIÓN'),
+                style: ElevatedButton.styleFrom(
+                  textStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
+            const SizedBox(height: 25),
             const Divider(),
             GridView.builder(
               shrinkWrap: true,
@@ -116,6 +134,10 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
