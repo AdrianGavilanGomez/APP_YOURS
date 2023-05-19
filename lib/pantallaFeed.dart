@@ -78,7 +78,22 @@ class _PantallaFeedState extends State<PantallaFeed> {
               const SizedBox(height: 35),
               Container(
                 child: const Text(
-                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
+                  'El otro dia fui a la Pedrera. Habia un poco de cola pero a valido la espera, es un lugar muy bonito tanto fuera como por dentro,lo recomiendo mucho.',
+                ),
+              ),
+              Container(
+                child: Image.asset('assets/images/logo_yourss.png'),
+              ),
+              Text(
+                '@angelromerosanchez',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 35),
+              Container(
+                child: const Text(
+                  'El otro dia fui al Maremagnum.Se vive un ambiente muy refrescante con muchas cosas a hacer y os la recomiendo, es un lugar muy bonito de visitar.',
                 ),
               ),
             ],
