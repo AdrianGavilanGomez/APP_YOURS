@@ -63,6 +63,12 @@ flutter:
     - assets/images/logo_yourss.png
     - assets/images/candado.png
     - assets/images/letras_yourss.png
+    - assets/images/chico_perfil.png
+    - assets/images/chicofeo.png
+    - assets/images/maremagnum.png
+    - assets/images/pedreraa.png
+    - assets/images/perfil_yourss.png
+    - assets/images/sagrada_familiaa.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

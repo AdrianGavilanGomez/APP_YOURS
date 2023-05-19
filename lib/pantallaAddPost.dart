@@ -97,14 +97,14 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                       const Spacer(),
                       Image.asset(
                         'assets/images/sagrada_familiaa.png',
-                        width: 10,
-                        height: 10,
+                        width: 50,
+                        height: 50,
                       ),
                       const Spacer(),
                       Image.asset(
                         'assets/images/maremagnum.png',
-                        width: 10,
-                        height: 10,
+                        width: 50,
+                        height: 50,
                       ),
                     ],
                   )
