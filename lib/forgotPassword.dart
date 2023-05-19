@@ -62,7 +62,7 @@ class ForgotPassword extends StatelessWidget {
                   // Acción al presionar el texto
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PantallaAddPost()),
+                    MaterialPageRoute(builder: (context) => PantallaFeed()),
                   );
                 },
                 child: const Text(
