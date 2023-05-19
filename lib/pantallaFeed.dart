@@ -82,7 +82,9 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Container(
-                child: Image.asset('assets/images/logo_yourss.png'),
+                child: Image.asset(
+                  'assets/images/pedreraa.png'
+                ),
               ),
               Text(
                 '@angelromerosanchez',
