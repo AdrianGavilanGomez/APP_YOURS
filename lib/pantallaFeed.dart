@@ -66,7 +66,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
                 ),
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height: 50),
               Container(
                 child: Image.asset('assets/images/pedreraa.png'),
               ),
@@ -82,7 +82,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   'El otro dia fui a la Pedrera. Habia un poco de cola pero a valido la espera, es un lugar muy bonito tanto fuera como por dentro,lo recomiendo mucho.',
                 ),
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height:50),
               Container(
                 child: Image.asset(
                   'assets/images/maremagnum.png'
