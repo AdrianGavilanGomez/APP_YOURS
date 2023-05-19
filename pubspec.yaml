@@ -69,6 +69,8 @@ flutter:
     - assets/images/pedreraa.png
     - assets/images/perfil_yourss.png
     - assets/images/sagrada_familiaa.png
+    - assets/images/camera.png
+    - assets/images/gallery.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

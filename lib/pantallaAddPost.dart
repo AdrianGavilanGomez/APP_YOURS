@@ -71,28 +71,31 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                 ),
               ),
               Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
                   child: Row(
                     children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            IconButton(
-                              icon: Icon(Icons.camera_alt),
-                              onPressed: () {
-                                // Lógica para abrir la cámara aquí
-                              },
-                            ),
-                          ],
-                        ),
+                      /*IconButton(
+                        icon: Icon(Icons.camera_alt),
+                        onPressed: () {
+                          // Lógica para abrir la galeria aquí
+                        },
                       ),
-                      const Spacer(),
                       IconButton(
                         icon: Icon(Icons.image_search),
                         onPressed: () {
                           // Lógica para abrir la galeria aquí
                         },
+                      ),*/
+                      Image.asset(
+                        'assets/images/camera.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      const Spacer(),
+                      Image.asset(
+                        'assets/images/gallery.png',
+                        width: 40,
+                        height: 40,
                       ),
                       const Spacer(),
                       Image.asset(
@@ -103,6 +106,12 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                       const Spacer(),
                       Image.asset(
                         'assets/images/maremagnum.png',
+                        width: 50,
+                        height: 50,
+                      ),
+                      const Spacer(),
+                      Image.asset(
+                        'assets/images/pedreraa.png',
                         width: 50,
                         height: 50,
                       ),
