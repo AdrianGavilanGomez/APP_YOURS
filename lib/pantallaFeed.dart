@@ -16,6 +16,8 @@ class _PantallaFeedState extends State<PantallaFeed> {
   static const List<Widget> _widgetOptions = <Widget>[
     Text('Feed'),
     Text('Buscar'),
+    Text('Añadir'),
+    Text('Configuraciones'),
     Text('Perfil'),
   ];
 
@@ -64,28 +66,55 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
                 ),
               ),
+              Container(
+                child: Image.asset('assets/images/logo_yourss.png'),
+              ),
+              Text(
+                '@adriangavilangomez',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 35),
+              Container(
+                child: const Text(
+                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
+                ),
+              ),
             ],
           ),
         ),
       ),
+
+
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.black,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Feed',
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Buscar',
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Perfil',
+            label: '',
           ),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:app_yours/forgotPassword.dart';
 import 'package:app_yours/main.dart';
+import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
@@ -78,7 +79,7 @@ class _PantallaLoginState extends State<PantallaLogin> {
                     // accion del buton
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MyApp()),
+                      MaterialPageRoute(builder: (context) => PantallaFeed()),
                     );
                   },
                   child: const Text('INICIAR SESIÓN'),
