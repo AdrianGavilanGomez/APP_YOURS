@@ -2,14 +2,14 @@ import 'package:app_yours/main.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:flutter/material.dart';
 
-class PantallaFeed extends StatefulWidget {
-  const PantallaFeed({Key? key}) : super(key: key);
+class PantallaPublicacionUsuario extends StatefulWidget {
+  const PantallaPublicacionUsuario({Key? key}) : super(key: key);
 
   @override
-  _PantallaFeedState createState() => _PantallaFeedState();
+  _PantallaPublicacionUsuarioState createState() => _PantallaPublicacionUsuarioState();
 }
 
-class _PantallaFeedState extends State<PantallaFeed> {
+class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario> {
   bool _obscureText = true;
   int _selectedIndex = 0;
 
@@ -31,25 +31,26 @@ class _PantallaFeedState extends State<PantallaFeed> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 60),
+        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 80),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 child: Image.asset('assets/images/letras_yourss.png'),
-
+                width: 209,
+                height: 36,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               const Text(
-                'COMUNIDAD',
+                'SAGRADA FAMILIA',
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
               Container(
                 child: Image.asset('assets/images/sagrada_familiaa.png'),
               ),
@@ -57,7 +58,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 width: 70, // Establece el ancho deseado
                 height: 70, // Establece la altura deseada
                 child: Transform.translate(
-                  offset: Offset(-120, -220), // Cambia los valores para mover la imagen
+                  offset: Offset(-125, -210), // Cambia los valores para mover la imagen
                   child: ClipOval(
                     child: Image.asset(
                       'assets/images/Ivan.png',
@@ -70,86 +71,45 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: Text(
                   '@ivangallegofernandez',
-                  textAlign: TextAlign.left,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
+              const SizedBox(height: 0),
               Transform.translate(
-                offset: Offset(10, -30),
+                offset: Offset(5, -20),
                 child: const Text(
                   'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
                 ),
               ),
               const SizedBox(height: 50),
               Container(
-                child: Image.asset('assets/images/pedreraa.png'),
-              ),
-              Container(
                 width: 70, // Establece el ancho deseado
                 height: 70, // Establece la altura deseada
                 child: Transform.translate(
-                  offset: Offset(-120, -220), // Cambia los valores para mover la imagen
+                  offset: Offset(-125, -20), // Cambia los valores para mover la imagen
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/images/Adri.png',
+                      'assets/images/Amir.png',
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-10, -70), // Cambia el valor vertical para mover el texto hacia arriba
                 child: Text(
-                  '@adriangavilangomez',
+                  '@amirbelhedidabrowska',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-
-              const SizedBox(height: 0),
               Transform.translate(
-                offset: Offset(10, -30),
+                offset: Offset(-10, -20),
                 child: const Text(
-                  'El otro dia fui a la Pedrera. Habia un poco de cola pero a valido la espera, es un lugar muy bonito tanto fuera como por dentro,lo recomiendo mucho.',
-                ),
-              ),
-              const SizedBox(height:50),
-              Container(
-                child: Image.asset(
-                    'assets/images/maremagnum.png'
-                ),
-              ),
-              Container(
-                width: 70, // Establece el ancho deseado
-                height: 70, // Establece la altura deseada
-                child: Transform.translate(
-                  offset: Offset(-120, -220), // Cambia los valores para mover la imagen
-                  child: ClipOval(
-                    child: Image.asset(
-                      'assets/images/Angel.png',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-              Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@angelromerosanchez',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 0),
-              Transform.translate(
-                offset: Offset(10, -30),
-                child: const Text(
-                  'El otro dia fui al Maremagnum.Se vive un ambiente muy refrescante con muchas cosas a hacer y os la recomiendo, es un lugar muy bonito de visitar.',
+                  'Que sitio mas chulo, me encantaria ir a visitarlo. ',
                 ),
               ),
             ],
