@@ -76,6 +76,13 @@ flutter:
     - assets/images/Amir.png
     - assets/images/Angel.png
     - assets/images/Adri.png
+    - assets/images/Estrella_roja.png
+    - assets/images/foto_Ivan1.png
+    - assets/images/foto_Ivan2.png
+    - assets/images/foto_Ivan3.png
+    - assets/images/foto_Ivan4.png
+    - assets/images/foto_Ivan5.png
+    - assets/images/foto_Ivan6.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

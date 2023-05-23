@@ -60,7 +60,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
                   CircleAvatar(
                     radius: 50,
                     backgroundImage: AssetImage(
-                      'assets/images/chicofeo.png',
+                      'assets/images/Ivan.png',
                     ),
                   ),
                   const Spacer(),
@@ -121,10 +121,10 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
               ),
-              itemCount: 9,
+              itemCount: 6,
               itemBuilder: (context, index) {
                 return Image.asset(
-                  'assets/images/candado.png',
+                  'assets/images/foto_Ivan${index+1}.png',
                   fit: BoxFit.cover,
                 );
               },
