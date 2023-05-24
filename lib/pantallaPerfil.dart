@@ -3,6 +3,7 @@ import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/pantallaSettings.dart';
 import 'package:flutter/material.dart';
 
 
@@ -50,7 +51,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
       // Navegar a la pantalla Settings
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PantallaRegistro()),
+          MaterialPageRoute(builder: (context) => PantallaSettings()),
         );
         break;
       case 4:

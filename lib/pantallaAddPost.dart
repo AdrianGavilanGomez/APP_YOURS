@@ -3,6 +3,7 @@ import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/pantallaSettings.dart';
 import 'package:flutter/material.dart';
 
 class PantallaAddPost extends StatefulWidget {
@@ -63,7 +64,7 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
       // Navegar a la pantalla Settings
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PantallaRegistro()),
+          MaterialPageRoute(builder: (context) => PantallaSettings()),
         );
         break;
       case 4:

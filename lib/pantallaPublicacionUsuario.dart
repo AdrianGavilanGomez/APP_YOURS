@@ -5,6 +5,7 @@ import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaPerfilUsuario.dart';
 import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/pantallaSettings.dart';
 import 'package:flutter/material.dart';
 
 class PantallaPublicacionUsuario extends StatefulWidget {
@@ -51,7 +52,7 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
       // Navegar a la pantalla Settings
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PantallaRegistro()),
+          MaterialPageRoute(builder: (context) => PantallaSettings()),
         );
         break;
       case 4:
