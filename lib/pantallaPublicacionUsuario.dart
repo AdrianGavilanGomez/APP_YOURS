@@ -3,6 +3,7 @@ import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
+import 'package:app_yours/pantallaPerfilUsuario.dart';
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
@@ -120,15 +121,23 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
                 ),
               ),
               const SizedBox(height: 50),
-              Container(
-                width: 70, // Establece el ancho deseado
-                height: 70, // Establece la altura deseada
-                child: Transform.translate(
-                  offset: Offset(-125, -20), // Cambia los valores para mover la imagen
-                  child: ClipOval(
-                    child: Image.asset(
-                      'assets/images/Amir.png',
-                      fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaPerfilUsuario()),
+                  );
+                },
+                child: Container(
+                  width: 70,
+                  height: 70,
+                  child: Transform.translate(
+                    offset: Offset(-125, -20),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/Amir.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),

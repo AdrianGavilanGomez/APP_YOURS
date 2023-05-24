@@ -3,6 +3,7 @@ import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/pantallaPublicacionUsuario.dart';
 import 'package:flutter/material.dart';
 
 class PantallaFeed extends StatefulWidget {
@@ -61,7 +62,6 @@ class _PantallaFeedState extends State<PantallaFeed> {
         break;
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +85,13 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               const SizedBox(height: 50),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaPublicacionUsuario()),
+                  );
+                },
                 child: Image.asset('assets/images/sagrada_familiaa.png'),
               ),
               Container(
