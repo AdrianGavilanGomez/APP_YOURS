@@ -21,7 +21,15 @@ class _PantallaRegistroState extends State<PantallaRegistro> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/letras_yourss.png'),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyApp()),
+                    );
+                  },
+                  child: Image.asset('assets/images/letras_yourss.png'),
+                ),
                 const SizedBox(height: 60),
                 const TextField(
                   decoration: InputDecoration(
