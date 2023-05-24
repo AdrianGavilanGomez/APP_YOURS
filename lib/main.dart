@@ -1,4 +1,3 @@
-import 'package:app_yours/forgotPassword.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';

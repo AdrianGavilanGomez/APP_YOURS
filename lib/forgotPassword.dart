@@ -12,11 +12,21 @@ class ForgotPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 35), //establecemos el padding horizontal
-        child: Center(
+        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 90), //establecemos el padding horizontal
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyApp()),
+                  );
+                },
+                child: Image.asset('assets/images/letras_yourss.png'),
+              ),
+              const SizedBox(height: 40),
               Image.asset('assets/images/candado.png'),
               const SizedBox(height: 40),
               const Text(
@@ -62,7 +72,7 @@ class ForgotPassword extends StatelessWidget {
                   // Acción al presionar el texto
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PantallaAddPost()),
+                    MaterialPageRoute(builder: (context) => PantallaLogin()),
                   );
                 },
                 child: const Text(

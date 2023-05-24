@@ -73,7 +73,6 @@ class _PantallaFeedState extends State<PantallaFeed> {
             children: [
               Container(
                 child: Image.asset('assets/images/letras_yourss.png'),
-
               ),
               const SizedBox(height: 10),
               const Text(
@@ -85,6 +84,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               const SizedBox(height: 50),
+<<<<<<< HEAD
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -93,6 +93,15 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   );
                 },
                 child: Image.asset('assets/images/sagrada_familiaa.png'),
+=======
+              Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/sagrada_familiaa.png',
+                  ),
+                ),
+>>>>>>> 31d4e31a77cb147c981134ccc73c27f9de9eb666
               ),
               Container(
                 width: 70, // Establece el ancho deseado
@@ -125,7 +134,12 @@ class _PantallaFeedState extends State<PantallaFeed> {
               ),
               const SizedBox(height: 50),
               Container(
-                child: Image.asset('assets/images/pedreraa.png'),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/pedreraa.png',
+                  ),
+                ),
               ),
               Container(
                 width: 70, // Establece el ancho deseado
@@ -159,8 +173,11 @@ class _PantallaFeedState extends State<PantallaFeed> {
               ),
               const SizedBox(height:50),
               Container(
-                child: Image.asset(
-                    'assets/images/maremagnum.png'
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/maremagnum.png',
+                  ),
                 ),
               ),
               Container(
@@ -185,7 +202,6 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 0),
               Transform.translate(
                 offset: Offset(10, -30),
@@ -193,6 +209,159 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   'El otro dia fui al Maremagnum.Se vive un ambiente muy refrescante con muchas cosas a hacer y os la recomiendo, es un lugar muy bonito de visitar.',
                 ),
               ),
+              const SizedBox(height:50),
+              Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/sagrada_familiaa.png',
+                  ),
+                ),
+              ),
+              Container(
+                width: 70, // Establece el ancho deseado
+                height: 70, // Establece la altura deseada
+                child: Transform.translate(
+                  offset: Offset(-120, -220), // Cambia los valores para mover la imagen
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/images/Ivan.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                child: Text(
+                  '@ivangallegofernandez',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(10, -30),
+                child: const Text(
+                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
+                ),
+              ),
+              const SizedBox(height: 50),
+              Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/sagrada_familiaa.png',
+                  ),
+                ),
+              ),
+              Container(
+                width: 70, // Establece el ancho deseado
+                height: 70, // Establece la altura deseada
+                child: Transform.translate(
+                  offset: Offset(-120, -220), // Cambia los valores para mover la imagen
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/images/Ivan.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                child: Text(
+                  '@ivangallegofernandez',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(10, -30),
+                child: const Text(
+                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
+                ),
+              ),
+              const SizedBox(height: 50),
+              Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/sagrada_familiaa.png',
+                  ),
+                ),
+              ),
+              Container(
+                width: 70, // Establece el ancho deseado
+                height: 70, // Establece la altura deseada
+                child: Transform.translate(
+                  offset: Offset(-120, -220), // Cambia los valores para mover la imagen
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/images/Ivan.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                child: Text(
+                  '@ivangallegofernandez',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(10, -30),
+                child: const Text(
+                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
+                ),
+              ),
+              const SizedBox(height: 50),
+              Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/sagrada_familiaa.png',
+                  ),
+                ),
+              ),
+              Container(
+                width: 70, // Establece el ancho deseado
+                height: 70, // Establece la altura deseada
+                child: Transform.translate(
+                  offset: Offset(-120, -220), // Cambia los valores para mover la imagen
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/images/Ivan.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                child: Text(
+                  '@ivangallegofernandez',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(10, -30),
+                child: const Text(
+                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
+                ),
+              ),
+              const SizedBox(height: 50),
             ],
           ),
         ),
