@@ -2,8 +2,11 @@ import 'package:app_yours/main.dart';
 import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
-import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
 import 'package:app_yours/pantallaPublicacionUsuario.dart';
+import 'package:app_yours/pantallaPublicacionUsuario_dos.dart';
+import 'package:app_yours/pantallaPublicacionUsuario_tres.dart';
+import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
 class PantallaFeed extends StatefulWidget {
@@ -62,6 +65,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
         break;
     }
   }
+//HOLA ANGEL
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +88,6 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               const SizedBox(height: 50),
-<<<<<<< HEAD
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -92,26 +95,28 @@ class _PantallaFeedState extends State<PantallaFeed> {
                     MaterialPageRoute(builder: (context) => PantallaPublicacionUsuario()),
                   );
                 },
-                child: Image.asset('assets/images/sagrada_familiaa.png'),
-=======
-              Container(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/sagrada_familiaa.png',
-                  ),
+                  child: Image.asset('assets/images/sagrada_familiaa.png'),
                 ),
->>>>>>> 31d4e31a77cb147c981134ccc73c27f9de9eb666
               ),
-              Container(
-                width: 70, // Establece el ancho deseado
-                height: 70, // Establece la altura deseada
-                child: Transform.translate(
-                  offset: Offset(-120, -220), // Cambia los valores para mover la imagen
-                  child: ClipOval(
-                    child: Image.asset(
-                      'assets/images/Ivan.png',
-                      fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaPerfil()),
+                  );
+                },
+                child: Container(
+                  width: 70,
+                  height: 70,
+                  child: Transform.translate(
+                    offset: Offset(-125, -220),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/Ivan.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
@@ -133,12 +138,16 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               const SizedBox(height: 50),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaPublicacionUsuario_dos()),
+                  );
+                },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/pedreraa.png',
-                  ),
+                  child: Image.asset('assets/images/pedreraa.png'),
                 ),
               ),
               Container(
@@ -172,12 +181,16 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               const SizedBox(height:50),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaPublicacionUsuario_tres()),
+                  );
+                },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/maremagnum.png',
-                  ),
+                  child: Image.asset('assets/images/maremagnum.png'),
                 ),
               ),
               Container(
