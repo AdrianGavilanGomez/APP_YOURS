@@ -1,5 +1,8 @@
 import 'package:app_yours/main.dart';
+import 'package:app_yours/pantallaAddPost.dart';
+import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
+import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
 
@@ -12,6 +15,53 @@ class PantallaPerfil extends StatefulWidget {
 
 class _PantallaPerfilState extends State<PantallaPerfil> {
   bool _obscureText = true;
+
+  int _currentIndex = 0; // Índice inicial del BottomNavigationBar
+
+  void _navigateToScreen(int index) {
+    // Actualizar el índice actual y navegar a la pantalla correspondiente
+    setState(() {
+      _currentIndex = index;
+    });
+
+    switch (index) {
+      case 0:
+      // Navegar a la pantalla Home
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaFeed()),
+        );
+        break;
+      case 1:
+      // Navegar a la pantalla Search
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaLogin()),
+        );
+        break;
+      case 2:
+      // Navegar a la pantalla Add (pantalla actual)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaAddPost()),
+        );
+        break;
+      case 3:
+      // Navegar a la pantalla Settings
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaRegistro()),
+        );
+        break;
+      case 4:
+      // Navegar a la pantalla Profile
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaPerfil()),
+        );
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -160,6 +210,8 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
         showUnselectedLabels: false,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black,
+        currentIndex: _currentIndex, // Establecer el índice actual
+        onTap: _navigateToScreen, // Llamar a la función al hacer clic
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

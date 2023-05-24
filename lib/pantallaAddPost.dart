@@ -1,5 +1,8 @@
 import 'package:app_yours/main.dart';
+import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
+import 'package:app_yours/pantallaPerfil.dart';
+import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
 class PantallaAddPost extends StatefulWidget {
@@ -11,6 +14,53 @@ class PantallaAddPost extends StatefulWidget {
 
 class _PantallaAddPostState extends State<PantallaAddPost> {
   bool _obscureText = true;
+
+  int _currentIndex = 0; // Índice inicial del BottomNavigationBar
+
+  void _navigateToScreen(int index) {
+    // Actualizar el índice actual y navegar a la pantalla correspondiente
+    setState(() {
+      _currentIndex = index;
+    });
+
+    switch (index) {
+      case 0:
+      // Navegar a la pantalla Home
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => PantallaFeed()),
+      );
+        break;
+      case 1:
+      // Navegar a la pantalla Search
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaLogin()),
+        );
+        break;
+      case 2:
+      // Navegar a la pantalla Add (pantalla actual)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaAddPost()),
+        );
+        break;
+      case 3:
+      // Navegar a la pantalla Settings
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaRegistro()),
+        );
+        break;
+      case 4:
+      // Navegar a la pantalla Profile
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaPerfil()),
+        );
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +116,7 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -116,7 +166,81 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                         height: 50,
                       ),
                     ],
-                  )
+                  ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(30),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'UBICACIÓN',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 80),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Row(
+                  children: [
+                    const Text(
+                      'VALORACIÓN',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(width: 80),
+                    IconButton(
+                      onPressed: () {
+                        // Logica aqui
+                      },
+                      icon: Icon(Icons.star),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        // Logica aqui
+                      },
+                      icon: Icon(Icons.star),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        // Logica aqui
+                      },
+                      icon: Icon(Icons.star),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  // accion del buton
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaFeed()),
+                  );
+                },
+                child: const Text('PUBLICAR'),
+                style: ElevatedButton.styleFrom(
+                  textStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 25,
+                  ),
+                ),
               ),
             ],
           ),
@@ -128,6 +252,8 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
         showUnselectedLabels: false,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black,
+        currentIndex: _currentIndex, // Establecer el índice actual
+        onTap: _navigateToScreen, // Llamar a la función al hacer clic
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
