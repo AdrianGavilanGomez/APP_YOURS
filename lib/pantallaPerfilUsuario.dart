@@ -3,14 +3,14 @@ import 'package:app_yours/pantallaLogin.dart';
 import 'package:flutter/material.dart';
 
 
-class PantallaPerfil extends StatefulWidget {
-  const PantallaPerfil({Key? key}) : super(key: key);
+class PantallaPerfilUsuario extends StatefulWidget {
+  const PantallaPerfilUsuario({Key? key}) : super(key: key);
 
   @override
-  _PantallaPerfilState createState() => _PantallaPerfilState();
+  _PantallaPerfilUsuarioState createState() => _PantallaPerfilUsuarioState();
 }
 
-class _PantallaPerfilState extends State<PantallaPerfil> {
+class _PantallaPerfilUsuarioState extends State<PantallaPerfilUsuario> {
   bool _obscureText = true;
 
   @override
@@ -25,7 +25,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
             ),
             const SizedBox(height: 10),
             const Text(
-              '@ivangallegofernandez',
+              '@amirbelhedidrabowska',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
                         ),
                         const SizedBox(height: 4),
                         const Text(
-                          '1044',
+                          '1504',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
                   CircleAvatar(
                     radius: 50,
                     backgroundImage: AssetImage(
-                      'assets/images/Ivan.png',
+                      'assets/images/Amir.png',
                     ),
                   ),
                   const Spacer(),
@@ -78,7 +78,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
                         ),
                         const SizedBox(height: 4),
                         const Text(
-                          '483',
+                          '895',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -91,7 +91,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
               )
             ),
             const Text(
-              'Ivan Gallego',
+              'Amir Belhedi',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -145,7 +145,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
               itemCount: 6,
               itemBuilder: (context, index) {
                 return Image.asset(
-                  'assets/images/foto_Ivan${index+1}.png',
+                  'assets/images/foto_Amir${index+1}.png',
                   fit: BoxFit.cover,
                 );
               },
