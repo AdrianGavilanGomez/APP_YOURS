@@ -82,7 +82,7 @@ class _PantallaLoginState extends State<PantallaLogin> {
                     // accion del buton
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaPerfil()),
+                      MaterialPageRoute(builder: (context) => PantallaFeed()),
                     );
                   },
                   child: const Text('INICIAR SESIÓN'),

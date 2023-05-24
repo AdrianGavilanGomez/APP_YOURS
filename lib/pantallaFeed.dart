@@ -1,5 +1,8 @@
 import 'package:app_yours/main.dart';
+import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaLogin.dart';
+import 'package:app_yours/pantallaPerfil.dart';
+import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
 class PantallaFeed extends StatefulWidget {
@@ -11,20 +14,52 @@ class PantallaFeed extends StatefulWidget {
 
 class _PantallaFeedState extends State<PantallaFeed> {
   bool _obscureText = true;
-  int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Feed'),
-    Text('Buscar'),
-    Text('Añadir'),
-    Text('Configuraciones'),
-    Text('Perfil'),
-  ];
+  int _currentIndex = 0; // Índice inicial del BottomNavigationBar
 
-  void _onItemTapped(int index) {
+  void _navigateToScreen(int index) {
+    // Actualizar el índice actual y navegar a la pantalla correspondiente
     setState(() {
-      _selectedIndex = index;
+      _currentIndex = index;
     });
+
+    switch (index) {
+      case 0:
+      // Navegar a la pantalla Home
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaFeed()),
+        );
+        break;
+      case 1:
+      // Navegar a la pantalla Search
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaLogin()),
+        );
+        break;
+      case 2:
+      // Navegar a la pantalla Add (pantalla actual)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaAddPost()),
+        );
+        break;
+      case 3:
+      // Navegar a la pantalla Settings
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaRegistro()),
+        );
+        break;
+      case 4:
+      // Navegar a la pantalla Profile
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaPerfil()),
+        );
+        break;
+    }
   }
 
   @override
@@ -156,14 +191,14 @@ class _PantallaFeedState extends State<PantallaFeed> {
           ),
         ),
       ),
-
-
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.orange,
         unselectedItemColor: Colors.black,
+        currentIndex: _currentIndex, // Establecer el índice actual
+        onTap: _navigateToScreen, // Llamar a la función al hacer clic
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

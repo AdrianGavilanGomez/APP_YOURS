@@ -1,8 +1,9 @@
 import 'package:app_yours/main.dart';
+import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
+import 'package:app_yours/pantallaPerfil.dart';
+import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:google_maps_webservice/places.dart';
 
 class PantallaAddPost extends StatefulWidget {
   const PantallaAddPost({Key? key}) : super(key: key);
@@ -13,28 +14,51 @@ class PantallaAddPost extends StatefulWidget {
 
 class _PantallaAddPostState extends State<PantallaAddPost> {
   bool _obscureText = true;
-  final TextEditingController _searchController = TextEditingController();
-  GoogleMapsPlaces _places = GoogleMapsPlaces(apiKey: 'AIzaSyDM9fpwj_tY6-YOSv4dGVIBeI1DATp8WWk');
-  List<PlacesSearchResult> _searchResults = [];
 
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
+  int _currentIndex = 0; // Índice inicial del BottomNavigationBar
 
-  void onSearchTextChanged(String value) async {
-    if (value.isNotEmpty) {
-      final response = await _places.autocomplete(value);
-      if (response.isOkay) {
-        setState(() {
-          _searchResults = response.results;
-        });
-      }
-    } else {
-      setState(() {
-        _searchResults = [];
-      });
+  void _navigateToScreen(int index) {
+    // Actualizar el índice actual y navegar a la pantalla correspondiente
+    setState(() {
+      _currentIndex = index;
+    });
+
+    switch (index) {
+      case 0:
+      // Navegar a la pantalla Home
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => PantallaFeed()),
+      );
+        break;
+      case 1:
+      // Navegar a la pantalla Search
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaLogin()),
+        );
+        break;
+      case 2:
+      // Navegar a la pantalla Add (pantalla actual)
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaAddPost()),
+        );
+        break;
+      case 3:
+      // Navegar a la pantalla Settings
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaRegistro()),
+        );
+        break;
+      case 4:
+      // Navegar a la pantalla Profile
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaPerfil()),
+        );
+        break;
     }
   }
 
@@ -169,39 +193,6 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: TextField(
-                  controller: _searchController,
-                  onChanged: onSearchTextChanged,
-                  decoration: InputDecoration(
-                    hintText: 'Buscar dirección',
-                  ),
-                ),
-              ),
-
-              if (_searchResults.isNotEmpty) ...[
-                SizedBox(height: 10),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Card(
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: _searchResults.length,
-                      itemBuilder: (context, index) {
-                        final result = _searchResults[index];
-                        return ListTile(
-                          title: Text(result.description),
-                          onTap: () {
-                            // Lógica para manejar el resultado seleccionado
-                          },
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ],
-
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Row(
                   children: [
                     const Text(
@@ -240,7 +231,7 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                   // accion del buton
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PantallaLogin()),
+                    MaterialPageRoute(builder: (context) => PantallaFeed()),
                   );
                 },
                 child: const Text('PUBLICAR'),
@@ -261,6 +252,8 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
         showUnselectedLabels: false,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black,
+        currentIndex: _currentIndex, // Establecer el índice actual
+        onTap: _navigateToScreen, // Llamar a la función al hacer clic
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
