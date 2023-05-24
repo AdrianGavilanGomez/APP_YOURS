@@ -17,6 +17,20 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
 
   int _currentIndex = 0; // Índice inicial del BottomNavigationBar
 
+  String? selectedAddress;
+  List<String> addresses = [
+    'Calle Roger de Llúria 97, 09009 Barcelona',
+    'Calle Balmes 15, 08007 Barcelona',
+    'Calle Aribau 88, 08036 Barcelona',
+  ];
+
+  void addAddress(String address) {
+    setState(() {
+      addresses.add(address);
+      selectedAddress = address;
+    });
+  }
+
   void _navigateToScreen(int index) {
     // Actualizar el índice actual y navegar a la pantalla correspondiente
     setState(() {
@@ -184,7 +198,57 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(height: 80),
+                          const SizedBox(height: 5),
+                          DropdownButton<String>(
+                            value: selectedAddress,
+                            onChanged: (String? newValue) {
+                              setState(() {
+                                selectedAddress = newValue;
+                              });
+                            },
+                            items: addresses.map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                          ),
+                          const SizedBox(height: 10),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 30),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: ElevatedButton(
+                                  onPressed: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        String newAddress = '';
+
+                                        return AlertDialog(
+                                          title: const Text('Agregar dirección'),
+                                          content: TextField(
+                                            onChanged: (value) {
+                                              newAddress = value;
+                                            },
+                                          ),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () {
+                                                addAddress(newAddress);
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: const Text('Agregar'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: const Text('AGREGAR DIRECCIÓN'),
+                                ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -225,7 +289,7 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 15),
               ElevatedButton(
                 onPressed: () {
                   // accion del buton
@@ -236,6 +300,7 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                 },
                 child: const Text('PUBLICAR'),
                 style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF922B3E),
                   textStyle: const TextStyle(
                     color: Colors.black,
                     fontSize: 25,
