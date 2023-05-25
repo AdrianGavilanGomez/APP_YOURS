@@ -9,6 +9,7 @@ import 'package:app_yours/pantallaPublicacionUsuario_dos.dart';
 import 'package:app_yours/pantallaPublicacionUsuario_tres.dart';
 import 'package:app_yours/pantallaPublicacionUsuario.dart';
 import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/pantallaSettings.dart';
 import 'package:flutter/material.dart';
 
 class PantallaFeed extends StatefulWidget {
@@ -55,7 +56,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
       // Navegar a la pantalla Settings
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PantallaPublicacionUsuario()),
+          MaterialPageRoute(builder: (context) => PantallaSettings()),
         );
         break;
       case 4:
