@@ -105,11 +105,19 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@jordibatlleferreres',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                offset: Offset(-90, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfil()),
+                    );
+                  },
+                  child: Text(
+                    '@jordibatlleferreres',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -144,10 +152,18 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
               ),
               Transform.translate(
                 offset: Offset(-10, -70), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@ivangallegofernandez',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfil()),
+                    );
+                  },
+                  child: Text(
+                    '@ivangallegofernandez',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

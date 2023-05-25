@@ -3,14 +3,14 @@ import 'package:app_yours/pantallaLogin.dart';
 import 'package:flutter/material.dart';
 
 
-class PantallaPerfilUsuario_dos extends StatefulWidget {
-  const PantallaPerfilUsuario_dos({Key? key}) : super(key: key);
+class PantallaPerfilUsuario_cuatro extends StatefulWidget {
+  const PantallaPerfilUsuario_cuatro({Key? key}) : super(key: key);
 
   @override
-  _PantallaPerfilUsuario_dosState createState() => _PantallaPerfilUsuario_dosState();
+  _PantallaPerfilUsuario_cuatroState createState() => _PantallaPerfilUsuario_cuatroState();
 }
 
-class _PantallaPerfilUsuario_dosState extends State<PantallaPerfilUsuario_dos> {
+class _PantallaPerfilUsuario_cuatroState extends State<PantallaPerfilUsuario_cuatro> {
   bool _obscureText = true;
 
   @override
@@ -25,7 +25,7 @@ class _PantallaPerfilUsuario_dosState extends State<PantallaPerfilUsuario_dos> {
             ),
             const SizedBox(height: 10),
             const Text(
-              '@adriangavilangomez',
+              '@jordibatlleferreres',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class _PantallaPerfilUsuario_dosState extends State<PantallaPerfilUsuario_dos> {
                         ),
                         const SizedBox(height: 4),
                         const Text(
-                          '904',
+                          '1980',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class _PantallaPerfilUsuario_dosState extends State<PantallaPerfilUsuario_dos> {
                   CircleAvatar(
                     radius: 50,
                     backgroundImage: AssetImage(
-                      'assets/images/Adri.png',
+                      'assets/images/Jordi.png',
                     ),
                   ),
                   const Spacer(),
@@ -78,7 +78,7 @@ class _PantallaPerfilUsuario_dosState extends State<PantallaPerfilUsuario_dos> {
                         ),
                         const SizedBox(height: 4),
                         const Text(
-                          '488',
+                          '501',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -91,7 +91,7 @@ class _PantallaPerfilUsuario_dosState extends State<PantallaPerfilUsuario_dos> {
               )
             ),
             const Text(
-              'Adrian Gavilan',
+              'Angel Romero',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -145,7 +145,7 @@ class _PantallaPerfilUsuario_dosState extends State<PantallaPerfilUsuario_dos> {
               itemCount: 1,
               itemBuilder: (context, index) {
                 return Image.asset(
-                  'assets/images/foto_Adri${index+1}.png',
+                  'assets/images/foto_Angel${index+1}.png',
                   fit: BoxFit.cover,
                 );
               },

@@ -2,7 +2,10 @@ import 'package:app_yours/main.dart';
 import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
+import 'package:app_yours/pantallaPerfilUsuario.dart';
+import 'package:app_yours/pantallaPerfilUsuario_cuatro.dart';
 import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
+import 'package:app_yours/pantallaPerfilUsuario_tres.dart';
 import 'package:app_yours/pantallaPublicacionUsuario.dart';
 import 'package:app_yours/pantallaPublicacionUsuario_cuatro.dart';
 import 'package:app_yours/pantallaPublicacionUsuario_dos.dart';
@@ -126,11 +129,18 @@ class _PantallaFeedState extends State<PantallaFeed> {
               ),
               Transform.translate(
                 offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@ivangallegofernandez',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfil()),
+                    );
+                  },
+                  child: Text(
+                    '@ivangallegofernandez',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -168,10 +178,18 @@ class _PantallaFeedState extends State<PantallaFeed> {
               ),
               Transform.translate(
                 offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@adriangavilangomez',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_dos()),
+                    );
+                  },
+                  child: Text(
+                    '@adriangavilangomez',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -211,10 +229,18 @@ class _PantallaFeedState extends State<PantallaFeed> {
               ),
               Transform.translate(
                 offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@angelromerosanchez',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_tres()),
+                    );
+                  },
+                  child: Text(
+                    '@angelromerosanchez',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -222,7 +248,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
               Transform.translate(
                 offset: Offset(10, -30),
                 child: const Text(
-                  'Que partidazoo! Visca el Barçaaa',
+                  'El otro dia fui al Maremagnum.Se vive un ambiente muy refrescante con muchas cosas a hacer y os la recomiendo, es un lugar muy bonito de visitar.',
                 ),
               ),
               const SizedBox(height:50),
@@ -252,12 +278,19 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
-                offset: Offset(-90, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@jordibatlleferreres',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_cuatro()),
+                    );
+                  },
+                  child: Text(
+                    '@jordibatlleferreres',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -291,11 +324,18 @@ class _PantallaFeedState extends State<PantallaFeed> {
               ),
               Transform.translate(
                 offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@amirbelhedidrabowska',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario()),
+                    );
+                  },
+                  child: Text(
+                    '@amirbelhedidabrowska',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
