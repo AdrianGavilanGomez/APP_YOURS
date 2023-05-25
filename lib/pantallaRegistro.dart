@@ -45,6 +45,12 @@ class _PantallaRegistroState extends State<PantallaRegistro> {
                 ),
                 const TextField(
                   decoration: InputDecoration(
+                    labelText: 'Nombre de usuario',
+                    prefixIcon: Icon(Icons.person),
+                  ),
+                ),
+                const TextField(
+                  decoration: InputDecoration(
                     labelText: 'Fecha de nacimiento',
                     prefixIcon: Icon(Icons.date_range),
                   ),

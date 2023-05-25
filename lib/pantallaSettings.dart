@@ -63,11 +63,121 @@ class _PantallaSettingsState extends State<PantallaSettings> {
     }
   }
 
+  void _showPasswordResetPopup() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Revisa tu bandeja de entrada'),
+          content: const Text(
+              'Te hemos enviado un enlace para reestablecer tu contraseña.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('GENIAL'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showEmailResetPopup() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Revisa tu bandeja de entrada'),
+          content: const Text(
+              'Te hemos enviado un enlace para reestablecer tu correo electrónico.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('GENIAL'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showUsernameResetPopup() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Revisa tu bandeja de entrada'),
+          content: const Text(
+              'Te hemos enviado un enlace para reestablecer tu nombre de usuario.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('GENIAL'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showCreditosCreadoresPopup() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Créditos creadores YOURS'),
+          content: const Text(
+              'App desarrollada por @angelromerosanchez / @ivangallegofernandez / @adriangavilangomez'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('CERRAR'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  String? selectedLanguage;
+  List<String> languages = [
+    'Spanish',
+    'Catalan',
+    'English',
+    'French',
+    'German',
+    'Italian',
+    'Portuguese',
+    'Dutch',
+    'Swedish',
+    'Norwegian',
+    'Danish',
+    'Finnish',
+    'Russian',
+    'Chinese',
+    'Japanese',
+  ];
+
+  void addLanguage(String language) {
+    setState(() {
+      languages.add(language);
+      selectedLanguage = language;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 40),
+        padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center, // Centra verticalmente
@@ -86,11 +196,11 @@ class _PantallaSettingsState extends State<PantallaSettings> {
               ),
             ],
           ),
-          const SizedBox(height: 15),
+          const SizedBox(height: 30),
           ListTile(
             title: const Text('Modo oscuro / Modo claro'),
             trailing: Switch(
-              value: false, // Aquí debes manejar el estado del modo oscuro / claro
+              value: true, // Aquí debes manejar el estado del modo oscuro / claro
               onChanged: (value) {
                 // Lógica para cambiar el estado del modo oscuro / claro
               },
@@ -106,15 +216,24 @@ class _PantallaSettingsState extends State<PantallaSettings> {
             ),
           ),
           ListTile(
-            title: const Text('Cambiar contraseña'),
+            title: const Text('Cambiar nombre de usuario'),
             onTap: () {
               // Navegar a la pantalla de cambio de contraseña
+              _showUsernameResetPopup();
             },
           ),
           ListTile(
             title: const Text('Cambiar correo electrónico'),
             onTap: () {
               // Navegar a la pantalla de cambio de correo electrónico
+              _showEmailResetPopup();
+            },
+          ),
+          ListTile(
+            title: const Text('Cambiar contraseña'),
+            onTap: () {
+              // Navegar a la pantalla de cambio de contraseña
+              _showPasswordResetPopup();
             },
           ),
           ListTile(
@@ -123,10 +242,30 @@ class _PantallaSettingsState extends State<PantallaSettings> {
               // Navegar a la pantalla de cambio de idioma
             },
           ),
+          const SizedBox(height: 5),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 17),
+            child: DropdownButton<String>(
+              value: selectedLanguage,
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedLanguage = newValue;
+                });
+              },
+              items: languages.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          ),
+          const SizedBox(height: 10),
           ListTile(
             title: const Text('Créditos de los creadores de la app'),
             onTap: () {
               // Navegar a la pantalla de créditos
+              _showCreditosCreadoresPopup();
             },
           ),
         ],
