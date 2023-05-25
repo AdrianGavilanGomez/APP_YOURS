@@ -2,14 +2,12 @@ import 'package:app_yours/main.dart';
 import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
-<<<<<<< Updated upstream
 import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
 import 'package:app_yours/pantallaPublicacionUsuario.dart';
+import 'package:app_yours/pantallaPublicacionUsuario_cuatro.dart';
 import 'package:app_yours/pantallaPublicacionUsuario_dos.dart';
 import 'package:app_yours/pantallaPublicacionUsuario_tres.dart';
-=======
 import 'package:app_yours/pantallaPublicacionUsuario.dart';
->>>>>>> Stashed changes
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
@@ -223,16 +221,20 @@ class _PantallaFeedState extends State<PantallaFeed> {
               Transform.translate(
                 offset: Offset(10, -30),
                 child: const Text(
-                  'El otro dia fui al Maremagnum.Se vive un ambiente muy refrescante con muchas cosas a hacer y os la recomiendo, es un lugar muy bonito de visitar.',
+                  'Que partidazoo! Visca el Barçaaa',
                 ),
               ),
               const SizedBox(height:50),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaPublicacionUsuario_cuatro()),
+                  );
+                },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/sagrada_familiaa.png',
-                  ),
+                  child: Image.asset('assets/images/Spotify_CampNou.png'),
                 ),
               ),
               Container(
@@ -242,16 +244,16 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   offset: Offset(-120, -220), // Cambia los valores para mover la imagen
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/images/Ivan.png',
+                      'assets/images/Jordi.png',
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-90, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: Text(
-                  '@ivangallegofernandez',
+                  '@jordibatlleferreres',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -261,7 +263,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
               Transform.translate(
                 offset: Offset(10, -30),
                 child: const Text(
-                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
+                  'Que partidazo jugó el Barça el otro dia en el       Spotify Camp Nou, como se notaba el apoyo de   los animadores.',
                 ),
               ),
               const SizedBox(height: 50),
@@ -269,7 +271,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/sagrada_familiaa.png',
+                    'assets/images/Park_Guell.png',
                   ),
                 ),
               ),
@@ -280,7 +282,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   offset: Offset(-120, -220), // Cambia los valores para mover la imagen
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/images/Ivan.png',
+                      'assets/images/Amir.png',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -289,7 +291,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
               Transform.translate(
                 offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: Text(
-                  '@ivangallegofernandez',
+                  '@amirbelhedidrabowska',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -299,7 +301,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
               Transform.translate(
                 offset: Offset(10, -30),
                 child: const Text(
-                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
+                  'Que maravilla el Park Guell! Un sitio increiblemente precioso con mucho arte y estructuras.',
                 ),
               ),
               const SizedBox(height: 50),
@@ -307,7 +309,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/sagrada_familiaa.png',
+                    'assets/images/Las_ramblas.png',
                   ),
                 ),
               ),
@@ -318,7 +320,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   offset: Offset(-120, -220), // Cambia los valores para mover la imagen
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/images/Ivan.png',
+                      'assets/images/Alejandro.png',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -327,7 +329,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
               Transform.translate(
                 offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: Text(
-                  '@ivangallegofernandez',
+                  '@alejandrolegrahernandez',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -337,7 +339,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
               Transform.translate(
                 offset: Offset(10, -30),
                 child: const Text(
-                  'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
+                  'Cuantas tiendas hay por las Ramblas!',
                 ),
               ),
               const SizedBox(height: 50),
