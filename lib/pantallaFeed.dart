@@ -3,12 +3,15 @@ import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaPerfilUsuario.dart';
+import 'package:app_yours/pantallaPerfilUsuario_cinco.dart';
 import 'package:app_yours/pantallaPerfilUsuario_cuatro.dart';
 import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
 import 'package:app_yours/pantallaPerfilUsuario_tres.dart';
 import 'package:app_yours/pantallaPublicacionUsuario.dart';
+import 'package:app_yours/pantallaPublicacionUsuario_cinco.dart';
 import 'package:app_yours/pantallaPublicacionUsuario_cuatro.dart';
 import 'package:app_yours/pantallaPublicacionUsuario_dos.dart';
+import 'package:app_yours/pantallaPublicacionUsuario_seis.dart';
 import 'package:app_yours/pantallaPublicacionUsuario_tres.dart';
 import 'package:app_yours/pantallaPublicacionUsuario.dart';
 import 'package:app_yours/pantallaRegistro.dart';
@@ -301,12 +304,16 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               const SizedBox(height: 50),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaPublicacionUsuario_cinco()),
+                  );
+                },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/Park_Guell.png',
-                  ),
+                  child: Image.asset('assets/images/Park_Guell.png'),
                 ),
               ),
               Container(
@@ -346,12 +353,16 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               const SizedBox(height: 50),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaPublicacionUsuario_seis()),
+                  );
+                },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/Las_ramblas.png',
-                  ),
+                  child: Image.asset('assets/images/Las_ramblas.png'),
                 ),
               ),
               Container(
@@ -368,12 +379,19 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@alejandrolegrahernandez',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                offset: Offset(-70, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_cinco()),
+                    );
+                  },
+                  child: Text(
+                    '@alejandrolegrahernandez',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

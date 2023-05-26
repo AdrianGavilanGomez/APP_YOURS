@@ -3,14 +3,14 @@ import 'package:app_yours/pantallaLogin.dart';
 import 'package:flutter/material.dart';
 
 
-class PantallaPerfilUsuario_cinco extends StatefulWidget {
-  const PantallaPerfilUsuario_cinco({Key? key}) : super(key: key);
+class PantallaPerfilUsuario_seis extends StatefulWidget {
+  const PantallaPerfilUsuario_seis({Key? key}) : super(key: key);
 
   @override
-  _PantallaPerfilUsuario_cincoState createState() => _PantallaPerfilUsuario_cincoState();
+  _PantallaPerfilUsuario_seisState createState() => _PantallaPerfilUsuario_seisState();
 }
 
-class _PantallaPerfilUsuario_cincoState extends State<PantallaPerfilUsuario_cinco> {
+class _PantallaPerfilUsuario_seisState extends State<PantallaPerfilUsuario_seis> {
   bool _obscureText = true;
 
   @override
@@ -48,7 +48,7 @@ class _PantallaPerfilUsuario_cincoState extends State<PantallaPerfilUsuario_cinc
                         ),
                         const SizedBox(height: 4),
                         const Text(
-                          '750',
+                          '864',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class _PantallaPerfilUsuario_cincoState extends State<PantallaPerfilUsuario_cinc
                         ),
                         const SizedBox(height: 4),
                         const Text(
-                          '700',
+                          '488',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -91,7 +91,7 @@ class _PantallaPerfilUsuario_cincoState extends State<PantallaPerfilUsuario_cinc
               )
             ),
             const Text(
-              'Alejandro Legra',
+              'Angel Romero',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -145,7 +145,7 @@ class _PantallaPerfilUsuario_cincoState extends State<PantallaPerfilUsuario_cinc
               itemCount: 1,
               itemBuilder: (context, index) {
                 return Image.asset(
-                  'assets/images/foto_Alejandro${index+1}.png',
+                  'assets/images/foto_Angel${index+1}.png',
                   fit: BoxFit.cover,
                 );
               },

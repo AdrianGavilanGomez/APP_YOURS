@@ -4,6 +4,8 @@ import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaPerfilUsuario.dart';
+import 'package:app_yours/pantallaPerfilUsuario_cuatro.dart';
+import 'package:app_yours/pantallaPerfilUsuario_tres.dart';
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
@@ -106,10 +108,18 @@ class _PantallaPublicacionUsuario_tresState extends State<PantallaPublicacionUsu
               ),
               Transform.translate(
                 offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@angelromerosanchez',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_tres()),
+                    );
+                  },
+                  child: Text(
+                    '@angelromerosanchez',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -143,11 +153,19 @@ class _PantallaPublicacionUsuario_tresState extends State<PantallaPublicacionUsu
                 ),
               ),
               Transform.translate(
-                offset: Offset(-40, -70), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@jordibatlle',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                offset: Offset(-20, -70), // Cambia el valor vertical para mover el texto hacia arriba
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_cuatro()),
+                    );
+                  },
+                  child: Text(
+                    '@jordibatlleferreres',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

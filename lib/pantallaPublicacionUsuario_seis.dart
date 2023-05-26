@@ -4,18 +4,18 @@ import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaPerfilUsuario.dart';
-import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
+import 'package:app_yours/pantallaPerfilUsuario_cuatro.dart';
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
-class PantallaPublicacionUsuario_dos extends StatefulWidget {
-  const PantallaPublicacionUsuario_dos({Key? key}) : super(key: key);
+class PantallaPublicacionUsuario_seis extends StatefulWidget {
+  const PantallaPublicacionUsuario_seis({Key? key}) : super(key: key);
 
   @override
-  _PantallaPublicacionUsuario_dosState createState() => _PantallaPublicacionUsuario_dosState();
+  _PantallaPublicacionUsuario_seisState createState() => _PantallaPublicacionUsuario_seisState();
 }
 
-class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsuario_dos> {
+class _PantallaPublicacionUsuario_seisState extends State<PantallaPublicacionUsuario_seis> {
   bool _obscureText = true;
 
   int _currentIndex = 0; // Índice inicial del BottomNavigationBar
@@ -81,7 +81,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
               ),
               const SizedBox(height: 20),
               const Text(
-                'PEDRERA',
+                'LAS RAMBLAS',
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.black,
@@ -90,7 +90,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
               ),
               const SizedBox(height: 30),
               Container(
-                child: Image.asset('assets/images/pedreraa.png'),
+                child: Image.asset('assets/images/Las_ramblas.png'),
               ),
               Container(
                 width: 70, // Establece el ancho deseado
@@ -99,65 +99,19 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                   offset: Offset(-125, -210), // Cambia los valores para mover la imagen
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/images/Adri.png',
+                      'assets/images/Alejandro.png',
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-90, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_dos()),
-                    );
-                  },
-                  child: Text(
-                    '@adriangavilangomez',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 0),
-              Transform.translate(
-                offset: Offset(5, -20),
-                child: const Text(
-                  'El otro dia fui a la Pedrera. Habia un poco de cola pero a valido la espera, es un lugar muy bonito tanto fuera como por dentro,lo recomiendo mucho.',
-                ),
-              ),
-              const SizedBox(height: 50),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PantallaPerfilUsuario()),
-                  );
-                },
-                child: Container(
-                  width: 70,
-                  height: 70,
-                  child: Transform.translate(
-                    offset: Offset(-125, -20),
-                    child: ClipOval(
-                      child: Image.asset(
-                        'assets/images/Alejandro.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Transform.translate(
-                offset: Offset(0, -70), // Cambia el valor vertical para mover el texto hacia arriba
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_dos()),
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_cuatro()),
                     );
                   },
                   child: Text(
@@ -168,10 +122,56 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                   ),
                 ),
               ),
+              const SizedBox(height: 0),
               Transform.translate(
-                offset: Offset(-30, -20),
+                offset: Offset(-50, -20),
                 child: const Text(
-                  'Un monumento hisotrico de Bareclona! ',
+                  'QCuantas tiendas hay por las Ramblas!',
+                ),
+              ),
+              const SizedBox(height: 50),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaFeed()),
+                  );
+                },
+                child: Container(
+                  width: 70,
+                  height: 70,
+                  child: Transform.translate(
+                    offset: Offset(-125, -20),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/Ivan.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(-10, -70), // Cambia el valor vertical para mover el texto hacia arriba
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfil()),
+                    );
+                  },
+                  child: Text(
+                    '@ivangallegofernandez',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              Transform.translate(
+                offset: Offset(-80, -20),
+                child: const Text(
+                  'Siempre esta lleno de gente! ',
                 ),
               ),
             ],

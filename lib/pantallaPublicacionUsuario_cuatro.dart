@@ -4,6 +4,7 @@ import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaPerfilUsuario.dart';
+import 'package:app_yours/pantallaPerfilUsuario_cuatro.dart';
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
@@ -110,7 +111,7 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaPerfil()),
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_cuatro()),
                     );
                   },
                   child: Text(
@@ -125,7 +126,7 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
               Transform.translate(
                 offset: Offset(-50, -20),
                 child: const Text(
-                  'Que partidazoo! Visca el Barçaaa',
+                  'Que partidazoo! Visca el Barçaaa.',
                 ),
               ),
               const SizedBox(height: 50),

@@ -107,10 +107,18 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
               ),
               Transform.translate(
                 offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@ivangallegofernandez',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfil()),
+                    );
+                  },
+                  child: Text(
+                    '@ivangallegofernandez',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -144,11 +152,19 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
                 ),
               ),
               Transform.translate(
-                offset: Offset(-10, -70), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@amirbelhedidabrowska',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                offset: Offset(-10, -65), // Cambia el valor vertical para mover el texto hacia arriba
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario()),
+                    );
+                  },
+                  child: Text(
+                    '@amirbelhedidabrowska',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

@@ -4,18 +4,19 @@ import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaPerfilUsuario.dart';
-import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
+import 'package:app_yours/pantallaPerfilUsuario_cinco.dart';
+import 'package:app_yours/pantallaPerfilUsuario_cuatro.dart';
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
 
-class PantallaPublicacionUsuario_dos extends StatefulWidget {
-  const PantallaPublicacionUsuario_dos({Key? key}) : super(key: key);
+class PantallaPublicacionUsuario_cinco extends StatefulWidget {
+  const PantallaPublicacionUsuario_cinco({Key? key}) : super(key: key);
 
   @override
-  _PantallaPublicacionUsuario_dosState createState() => _PantallaPublicacionUsuario_dosState();
+  _PantallaPublicacionUsuario_cincoState createState() => _PantallaPublicacionUsuario_cincoState();
 }
 
-class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsuario_dos> {
+class _PantallaPublicacionUsuario_cincoState extends State<PantallaPublicacionUsuario_cinco> {
   bool _obscureText = true;
 
   int _currentIndex = 0; // Índice inicial del BottomNavigationBar
@@ -81,7 +82,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
               ),
               const SizedBox(height: 20),
               const Text(
-                'PEDRERA',
+                'PARK GUELL',
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.black,
@@ -90,7 +91,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
               ),
               const SizedBox(height: 30),
               Container(
-                child: Image.asset('assets/images/pedreraa.png'),
+                child: Image.asset('assets/images/Park_Guell.png'),
               ),
               Container(
                 width: 70, // Establece el ancho deseado
@@ -99,7 +100,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                   offset: Offset(-125, -210), // Cambia los valores para mover la imagen
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/images/Adri.png',
+                      'assets/images/Amir.png',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -111,11 +112,11 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_dos()),
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario()),
                     );
                   },
                   child: Text(
-                    '@adriangavilangomez',
+                    '@amirbelhedidabrowska',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -126,7 +127,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
               Transform.translate(
                 offset: Offset(5, -20),
                 child: const Text(
-                  'El otro dia fui a la Pedrera. Habia un poco de cola pero a valido la espera, es un lugar muy bonito tanto fuera como por dentro,lo recomiendo mucho.',
+                  'Que maravilla el Park Guell! Un sitio increiblemente precioso con mucho arte y estructuras.',
                 ),
               ),
               const SizedBox(height: 50),
@@ -134,7 +135,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => PantallaPerfilUsuario()),
+                    MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_cinco()),
                   );
                 },
                 child: Container(
@@ -144,7 +145,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                     offset: Offset(-125, -20),
                     child: ClipOval(
                       child: Image.asset(
-                        'assets/images/Alejandro.png',
+                        'assets/images/Jordi.png',
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -152,16 +153,16 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                 ),
               ),
               Transform.translate(
-                offset: Offset(0, -70), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-20, -70), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_dos()),
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_cuatro()),
                     );
                   },
                   child: Text(
-                    '@alejandrolegrahernandez',
+                    '@jordibatlleferreres',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -169,9 +170,9 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                 ),
               ),
               Transform.translate(
-                offset: Offset(-30, -20),
+                offset: Offset(-70, -20),
                 child: const Text(
-                  'Un monumento hisotrico de Bareclona! ',
+                  'Hay unas vistas inreibles! ',
                 ),
               ),
             ],

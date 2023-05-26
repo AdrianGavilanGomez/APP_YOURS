@@ -95,6 +95,9 @@ flutter:
     - assets/images/Park_Guell.png
     - assets/images/Las_ramblas.png
     - assets/images/foto_Angel1.png
+    - assets/images/foto_Jordi1.png
+    - assets/images/foto_Jordi2.png
+    - assets/images/foto_Alejandro1.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

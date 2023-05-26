@@ -91,7 +91,7 @@ class _PantallaPerfilUsuario_cuatroState extends State<PantallaPerfilUsuario_cua
               )
             ),
             const Text(
-              'Angel Romero',
+              'Jordi Batlle',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -142,10 +142,10 @@ class _PantallaPerfilUsuario_cuatroState extends State<PantallaPerfilUsuario_cua
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
               ),
-              itemCount: 1,
+              itemCount: 2,
               itemBuilder: (context, index) {
                 return Image.asset(
-                  'assets/images/foto_Angel${index+1}.png',
+                  'assets/images/foto_Jordi${index+1}.png',
                   fit: BoxFit.cover,
                 );
               },
