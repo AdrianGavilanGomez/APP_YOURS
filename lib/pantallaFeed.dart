@@ -281,7 +281,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-85, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -330,7 +330,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-70, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -379,6 +379,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
+<<<<<<< HEAD
                 offset: Offset(-70, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
@@ -392,11 +393,19 @@ class _PantallaFeedState extends State<PantallaFeed> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
+=======
+                offset: Offset(-65, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                child: Text(
+                  '@alejandrolegrahernandez',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+>>>>>>> 7a7a459682ec2a9544de7c97018192092cfc2725
                   ),
                 ),
               ),
               Transform.translate(
-                offset: Offset(10, -30),
+                offset: Offset(-30, -30),
                 child: const Text(
                   'Cuantas tiendas hay por las Ramblas!',
                 ),
@@ -424,7 +433,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-75, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: Text(
                   '@ivangallegofernandez',
                   textAlign: TextAlign.left,
@@ -434,7 +443,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
-                offset: Offset(10, -30),
+                offset: Offset(15, -30),
                 child: const Text(
                   'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
                 ),
