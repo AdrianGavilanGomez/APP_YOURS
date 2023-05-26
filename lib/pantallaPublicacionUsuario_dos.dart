@@ -4,6 +4,7 @@ import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaPerfilUsuario.dart';
+import 'package:app_yours/pantallaPerfilUsuario_cinco.dart';
 import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:flutter/material.dart';
@@ -157,7 +158,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_dos()),
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_cinco()),
                     );
                   },
                   child: Text(

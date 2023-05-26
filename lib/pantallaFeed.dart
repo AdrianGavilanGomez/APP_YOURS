@@ -379,13 +379,12 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
-<<<<<<< HEAD
                 offset: Offset(-70, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_cinco()),
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario()),
                     );
                   },
                   child: Text(
@@ -393,23 +392,15 @@ class _PantallaFeedState extends State<PantallaFeed> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
-=======
-                offset: Offset(-65, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@alejandrolegrahernandez',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
->>>>>>> 7a7a459682ec2a9544de7c97018192092cfc2725
                   ),
                 ),
               ),
-              Transform.translate(
+                Transform.translate(
                 offset: Offset(-30, -30),
                 child: const Text(
                   'Cuantas tiendas hay por las Ramblas!',
+                  ),
                 ),
-              ),
               const SizedBox(height: 50),
               Container(
                 child: ClipRRect(
