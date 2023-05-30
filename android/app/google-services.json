@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "753500174641",
+    "project_id": "appyours-39e76",
+    "storage_bucket": "appyours-39e76.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753500174641:android:1194954dfa66d794885810",
+        "android_client_info": {
+          "package_name": "prat.dam.app_yours"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkap2euhVD8oQsU5lcYFY--kqJbzF-5G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
