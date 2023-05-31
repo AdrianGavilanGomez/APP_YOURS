@@ -4,6 +4,7 @@ import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaRegistro.dart';
 import 'package:app_yours/pantallaSettings.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 
@@ -152,10 +153,11 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
             ElevatedButton(
               onPressed: () {
                 // Acción al presionar el buton
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PantallaLogin()),
-                );
+                FirebaseAuth.instance.signOut().then((value) {
+                  print("Signed out");
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PantallaLogin()));
+                });
               },
               child: const Text('CERRAR SESIÓN'),
                 style: ElevatedButton.styleFrom(

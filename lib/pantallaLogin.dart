@@ -8,7 +8,9 @@ import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
 import 'package:app_yours/pantallaPerfilUsuario_tres.dart';
 import 'package:app_yours/pantallaPublicacionUsuario.dart';
 import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/reusable_widgets/reusable_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class PantallaLogin extends StatefulWidget {
   const PantallaLogin({Key? key}) : super(key: key);
@@ -19,6 +21,9 @@ class PantallaLogin extends StatefulWidget {
 
 class _PantallaLoginState extends State<PantallaLogin> {
   bool _obscureText = true;
+
+  TextEditingController _emailTextController = TextEditingController();
+  TextEditingController _passwordTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +43,20 @@ class _PantallaLoginState extends State<PantallaLogin> {
                 },
                   child: Image.asset('assets/images/letras_yourss.png'),
                 ),
-                const SizedBox(height: 60),
-                const TextField(
+                const SizedBox(height: 90),
+                reusableTextField("Correo electrónico", Icons.email, false, _emailTextController),
+                const SizedBox(
+                  height: 10,
+                ),
+                /*const TextField(
                   decoration: InputDecoration(
                     labelText: 'Correo electrónico',
                     prefixIcon: Icon(Icons.email),
                   ),
-                ),
+                ),*/
+                reusableTextField("Contraseña", Icons.lock, true, _passwordTextController),
                 const SizedBox(height: 20),
-                TextField(
+                /*TextField(
                   obscureText: _obscureText,
                   decoration: InputDecoration(
                     labelText: 'Contraseña',
@@ -60,8 +70,8 @@ class _PantallaLoginState extends State<PantallaLogin> {
                       },
                     ),
                   ),
-                ),
-                const SizedBox(height: 30), // Añade un espacio entre el Text y el TextField
+                ),*/
+                const SizedBox(height: 10), // Añade un espacio entre el Text y el TextField
                 GestureDetector(
                   onTap: () {
                     // Acción al presionar el texto
@@ -80,7 +90,7 @@ class _PantallaLoginState extends State<PantallaLogin> {
                   ),
                 ),
                 const SizedBox(height: 40), //agregar 20pix de espac
-                ElevatedButton(
+                /*ElevatedButton(
                   onPressed: () {
                     // accion del buton
                     Navigator.push(
@@ -95,8 +105,20 @@ class _PantallaLoginState extends State<PantallaLogin> {
                       fontSize: 25,
                     ),
                   ),
-                ),
-                const SizedBox(height: 80), //agregamos distancia de 80pix
+                ),*/
+                firebaseUIButton(context, "INICIAR SESIÓN", () {
+                  FirebaseAuth.instance
+                      .signInWithEmailAndPassword(
+                      email: _emailTextController.text,
+                      password: _passwordTextController.text)
+                      .then((value) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => PantallaFeed()));
+                  }).onError((error, stackTrace) {
+                    print("Error ${error.toString()}");
+                  });
+                }),
+                const SizedBox(height: 50), //agregamos distancia de 80pix
                 const Text(
                   '¿NO ESTÁS REGISTRADO?',
                   style: TextStyle(
@@ -106,19 +128,39 @@ class _PantallaLoginState extends State<PantallaLogin> {
                   ),
                 ),
                 const SizedBox(height: 10), //agregamos distancia de 10pix
-                ElevatedButton(
-                  onPressed: () {
-                    //accion del boton
+                GestureDetector(
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => PantallaRegistro()),
                     );
                   },
-                  child: const Text('REGISTRARSE'),
-                  style: ElevatedButton.styleFrom(
-                    textStyle: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 50,
+                    margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PantallaRegistro()),
+                        );
+                      },
+                      child: const Text(
+                        'REGISTRARSE',
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFF8E10E)),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                        ),
+                      ),
                     ),
                   ),
                 ),

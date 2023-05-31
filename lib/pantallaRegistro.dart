@@ -1,5 +1,8 @@
 import 'package:app_yours/main.dart';
+import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
+import 'package:app_yours/reusable_widgets/reusable_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class PantallaRegistro extends StatefulWidget {
@@ -11,6 +14,13 @@ class PantallaRegistro extends StatefulWidget {
 
 class _PantallaRegistroState extends State<PantallaRegistro> {
   bool _obscureText = true;
+
+  TextEditingController _nameTextController = TextEditingController();
+  TextEditingController _surnameTextController = TextEditingController();
+  TextEditingController _userNameTextController = TextEditingController();
+  TextEditingController _emailTextController = TextEditingController();
+  TextEditingController _passwordTextController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,38 +40,48 @@ class _PantallaRegistroState extends State<PantallaRegistro> {
                   },
                   child: Image.asset('assets/images/letras_yourss.png'),
                 ),
-                const SizedBox(height: 60),
-                const TextField(
+                const SizedBox(height: 40),
+                /*const TextField(
                   decoration: InputDecoration(
                     labelText: 'Nombre',
                     prefixIcon: Icon(Icons.person),
                   ),
+                ),*/
+                reusableTextField("Nombre", Icons.person, false, _nameTextController),
+                const SizedBox(
+                  height: 10,
                 ),
-                const TextField(
+                /*const TextField(
                   decoration: InputDecoration(
                     labelText: 'Apellidos',
                     prefixIcon: Icon(Icons.person),
                   ),
+                ),*/
+                reusableTextField("Apellido", Icons.person, false, _surnameTextController),
+                const SizedBox(
+                  height: 10,
                 ),
-                const TextField(
+                /*const TextField(
                   decoration: InputDecoration(
                     labelText: 'Nombre de usuario',
                     prefixIcon: Icon(Icons.person),
                   ),
+                ),*/
+                reusableTextField("Nombre de usuario", Icons.person, false, _userNameTextController),
+                const SizedBox(
+                  height: 10,
                 ),
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Fecha de nacimiento',
-                    prefixIcon: Icon(Icons.date_range),
-                  ),
-                ),
-                const TextField(
+                /*const TextField(
                   decoration: InputDecoration(
                     labelText: 'Correo electrónico',
                     prefixIcon: Icon(Icons.email),
                   ),
+                ),*/
+                reusableTextField("Correo electrónico", Icons.email, false, _emailTextController),
+                const SizedBox(
+                  height: 10,
                 ),
-                TextField(
+                /*TextField(
                   obscureText: _obscureText,
                   decoration: InputDecoration(
                     labelText: 'Contraseña',
@@ -75,9 +95,25 @@ class _PantallaRegistroState extends State<PantallaRegistro> {
                       },
                     ),
                   ),
+                ),*/
+                reusableTextField("Contraseña", Icons.lock, true, _passwordTextController),
+                const SizedBox(
+                  height: 20,
                 ),
-                const SizedBox(height: 40), //agregar 20pix de espac
-                ElevatedButton(
+                firebaseUIButton(context, "REGISTRARSE", () {
+                  FirebaseAuth.instance
+                      .createUserWithEmailAndPassword(
+                      email: _emailTextController.text,
+                      password: _passwordTextController.text)
+                      .then((value) {
+                    print("Created New Account");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => PantallaFeed()));
+                  }).onError((error, stackTrace) {
+                    print("Error ${error.toString()}");
+                  });
+                }),
+                /*ElevatedButton(
                   onPressed: () {
                     // accion del buton
                     Navigator.push(
@@ -92,8 +128,8 @@ class _PantallaRegistroState extends State<PantallaRegistro> {
                       fontSize: 25,
                     ),
                   ),
-                ),
-                const SizedBox(height: 40), //agregamos distancia de 80pix
+                ),*/
+                const SizedBox(height: 10), //agregamos distancia de 80pix
                 const Text(
                   '¿YA TIENES CUENTA?',
                   style: TextStyle(
