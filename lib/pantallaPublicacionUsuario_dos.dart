@@ -1,5 +1,6 @@
 import 'package:app_yours/main.dart';
 import 'package:app_yours/pantallaAddPost.dart';
+import 'package:app_yours/pantallaBuscador.dart';
 import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
@@ -7,6 +8,7 @@ import 'package:app_yours/pantallaPerfilUsuario.dart';
 import 'package:app_yours/pantallaPerfilUsuario_cinco.dart';
 import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
 import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/pantallaSettings.dart';
 import 'package:flutter/material.dart';
 
 class PantallaPublicacionUsuario_dos extends StatefulWidget {
@@ -39,7 +41,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
       // Navegar a la pantalla Search
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PantallaLogin()),
+          MaterialPageRoute(builder: (context) => PantallaBuscador()),
         );
         break;
       case 2:
@@ -53,7 +55,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
       // Navegar a la pantalla Settings
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PantallaRegistro()),
+          MaterialPageRoute(builder: (context) => PantallaSettings()),
         );
         break;
       case 4:
@@ -188,10 +190,11 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.orange,
-        unselectedItemColor: Colors.black,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         currentIndex: _currentIndex, // Establecer el índice actual
         onTap: _navigateToScreen, // Llamar a la función al hacer clic
+        backgroundColor: Color.fromRGBO(146, 43, 62, 1), // Cambia el color aquí
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

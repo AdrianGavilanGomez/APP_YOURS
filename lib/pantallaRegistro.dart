@@ -14,12 +14,63 @@ class PantallaRegistro extends StatefulWidget {
 
 class _PantallaRegistroState extends State<PantallaRegistro> {
   bool _obscureText = true;
+  bool showPassword = false;
 
   TextEditingController _nameTextController = TextEditingController();
   TextEditingController _surnameTextController = TextEditingController();
   TextEditingController _userNameTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
   TextEditingController _passwordTextController = TextEditingController();
+
+  TextField reusableTextField(String text, IconData icon, bool isPasswordType, TextEditingController controller) {
+    return TextField(
+      controller: controller,
+      obscureText: isPasswordType && !showPassword,
+      enableSuggestions: !isPasswordType,
+      autocorrect: !isPasswordType,
+      cursorColor: Colors.black,
+      style: TextStyle(color: Colors.black.withOpacity(0.9)),
+      decoration: InputDecoration(
+        prefixIcon: Icon(
+          icon,
+          color: Colors.black,
+        ),
+        suffixIcon: isPasswordType
+            ? GestureDetector(
+          onTapDown: (_) {
+            setState(() {
+              showPassword = true;
+            });
+          },
+          onTapUp: (_) {
+            setState(() {
+              showPassword = false;
+            });
+          },
+          onTapCancel: () {
+            setState(() {
+              showPassword = false;
+            });
+          },
+          child: Icon(
+            showPassword ? Icons.visibility : Icons.visibility_off,
+            color: Colors.black,
+          ),
+        )
+            : null,
+        labelText: text,
+        labelStyle: TextStyle(color: Colors.black.withOpacity(0.9)),
+        filled: true,
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+        fillColor: Colors.grey.withOpacity(0.5),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30.0),
+          borderSide: const BorderSide(width: 0, style: BorderStyle.none),
+        ),
+      ),
+      keyboardType: isPasswordType ? TextInputType.visiblePassword : TextInputType.emailAddress,
+    );
+  }
 
 
   @override

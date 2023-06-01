@@ -1,4 +1,5 @@
 import 'package:app_yours/main.dart';
+import 'package:app_yours/pantallaBuscador.dart';
 import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
@@ -41,16 +42,16 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
     switch (index) {
       case 0:
       // Navegar a la pantalla Home
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => PantallaFeed()),
-      );
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PantallaFeed()),
+        );
         break;
       case 1:
       // Navegar a la pantalla Search
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PantallaLogin()),
+          MaterialPageRoute(builder: (context) => PantallaBuscador()),
         );
         break;
       case 2:
@@ -359,7 +360,7 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25,
+                    fontSize: 20,
                   ),
                 ),
                 style: ButtonStyle(
@@ -385,7 +386,7 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.black,
+        selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white,
         currentIndex: _currentIndex, // Establecer el índice actual
         onTap: _navigateToScreen, // Llamar a la función al hacer clic

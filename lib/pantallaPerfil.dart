@@ -1,5 +1,6 @@
 import 'package:app_yours/main.dart';
 import 'package:app_yours/pantallaAddPost.dart';
+import 'package:app_yours/pantallaBuscador.dart';
 import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaRegistro.dart';
@@ -40,10 +41,11 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
       // Navegar a la pantalla Search
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PantallaLogin()),
+          MaterialPageRoute(builder: (context) => PantallaBuscador()),
         );
         break;
       case 2:
+      // Navegar a la pantalla Add (pantalla actual)
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => PantallaAddPost()),
@@ -240,10 +242,11 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         currentIndex: _currentIndex, // Establecer el índice actual
         onTap: _navigateToScreen, // Llamar a la función al hacer clic
+        backgroundColor: Color.fromRGBO(146, 43, 62, 1), // Cambia el color aquí
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
