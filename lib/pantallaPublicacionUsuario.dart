@@ -69,17 +69,18 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 80),
+        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 40,
+              ),
               Container(
                 child: Image.asset('assets/images/letras_yourss.png'),
-                width: 209,
-                height: 36,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               const Text(
                 'SAGRADA FAMILIA',
                 style: TextStyle(
@@ -89,7 +90,8 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
                 ),
               ),
               const SizedBox(height: 30),
-              Container(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset('assets/images/sagrada_familiaa.png'),
               ),
               Container(
@@ -106,7 +108,7 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-75, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -124,7 +126,7 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
               ),
               const SizedBox(height: 0),
               Transform.translate(
-                offset: Offset(5, -20),
+                offset: Offset(12, -20),
                 child: const Text(
                   'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
                 ),
@@ -152,7 +154,7 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
                 ),
               ),
               Transform.translate(
-                offset: Offset(-10, -65), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(0, -65), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -169,7 +171,7 @@ class _PantallaPublicacionUsuarioState extends State<PantallaPublicacionUsuario>
                 ),
               ),
               Transform.translate(
-                offset: Offset(-10, -20),
+                offset: Offset(-5, -20),
                 child: const Text(
                   'Que sitio mas chulo, me encantaria ir a visitarlo. ',
                 ),

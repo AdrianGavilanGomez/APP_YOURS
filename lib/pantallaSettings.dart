@@ -76,7 +76,22 @@ class _PantallaSettingsState extends State<PantallaSettings> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('GENIAL'),
+              child: const Text(
+                'GENIAL',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
             ),
           ],
         );
@@ -97,7 +112,22 @@ class _PantallaSettingsState extends State<PantallaSettings> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('GENIAL'),
+              child: const Text(
+                'GENIAL',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
             ),
           ],
         );
@@ -118,7 +148,22 @@ class _PantallaSettingsState extends State<PantallaSettings> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('GENIAL'),
+              child: const Text(
+                'GENIAL',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
             ),
           ],
         );
@@ -139,7 +184,22 @@ class _PantallaSettingsState extends State<PantallaSettings> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('CERRAR'),
+              child: const Text(
+                'GENIAL',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
             ),
           ],
         );
@@ -204,6 +264,7 @@ class _PantallaSettingsState extends State<PantallaSettings> {
               onChanged: (value) {
                 // Lógica para cambiar el estado del modo oscuro / claro
               },
+              activeColor: Color.fromRGBO(146, 43, 62, 1), // Cambia el color aquí
             ),
           ),
           ListTile(
@@ -213,6 +274,7 @@ class _PantallaSettingsState extends State<PantallaSettings> {
               onChanged: (value) {
                 // Lógica para cambiar el estado de las notificaciones
               },
+              activeColor: Color.fromRGBO(146, 43, 62, 1), // Cambia el color aquí
             ),
           ),
           ListTile(

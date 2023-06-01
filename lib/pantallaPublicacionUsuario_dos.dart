@@ -70,17 +70,18 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 80),
+        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 40,
+              ),
               Container(
                 child: Image.asset('assets/images/letras_yourss.png'),
-                width: 209,
-                height: 36,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               const Text(
                 'PEDRERA',
                 style: TextStyle(
@@ -90,7 +91,8 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                 ),
               ),
               const SizedBox(height: 30),
-              Container(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset('assets/images/pedreraa.png'),
               ),
               Container(
@@ -107,7 +109,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-75, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -125,7 +127,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
               ),
               const SizedBox(height: 0),
               Transform.translate(
-                offset: Offset(5, -20),
+                offset: Offset(12, -20),
                 child: const Text(
                   'El otro dia fui a la Pedrera. Habia un poco de cola pero a valido la espera, es un lugar muy bonito tanto fuera como por dentro,lo recomiendo mucho.',
                 ),
@@ -153,7 +155,7 @@ class _PantallaPublicacionUsuario_dosState extends State<PantallaPublicacionUsua
                 ),
               ),
               Transform.translate(
-                offset: Offset(0, -70), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(5, -65), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(

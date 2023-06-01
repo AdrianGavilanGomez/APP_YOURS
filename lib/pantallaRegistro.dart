@@ -135,23 +135,38 @@ class _PantallaRegistroState extends State<PantallaRegistro> {
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.black,
+                    fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
                   ),
                 ),
                 const SizedBox(height: 10), //agregamos distancia de 10pix
                 ElevatedButton(
                   onPressed: () {
-                    //accion del boton
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => PantallaLogin()),
                     );
                   },
-                  child: const Text('INICIAR SESIÓN'),
-                  style: ElevatedButton.styleFrom(
-                    textStyle: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
+                  child: const Text(
+                    'INICIAR SESIÓN',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    textStyle: MaterialStateProperty.all<TextStyle>(
+                      TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                      ),
                     ),
                   ),
                 ),

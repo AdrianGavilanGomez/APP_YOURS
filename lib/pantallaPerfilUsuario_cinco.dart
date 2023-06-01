@@ -100,20 +100,34 @@ class _PantallaPerfilUsuario_cincoState extends State<PantallaPerfilUsuario_cinc
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                // Acción al presionar el buton
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PantallaLogin()),
                 );
               },
-              child: const Text('CERRAR SESIÓN'),
-                style: ElevatedButton.styleFrom(
-                  textStyle: const TextStyle(
+              child: const Text(
+                'CERRAR SESIÓN',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                textStyle: MaterialStateProperty.all<TextStyle>(
+                  TextStyle(
                     color: Colors.black,
-                    fontSize: 15,
+                    fontSize: 25,
                   ),
                 ),
               ),
+            ),
             const SizedBox(height: 25),
             Container(
               width: 60, // Establece el ancho deseado
@@ -135,22 +149,20 @@ class _PantallaPerfilUsuario_cincoState extends State<PantallaPerfilUsuario_cinc
                   //),
                 //),
               //),
-            const Divider(),
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
               ),
-              itemCount: 1,
+              itemCount: 9,
               itemBuilder: (context, index) {
                 return Image.asset(
-                  'assets/images/foto_Alejandro${index+1}.png',
+                  'assets/images/foto_Ivan${index+1}.png',
                   fit: BoxFit.cover,
                 );
               },
             ),
-
           ],
         ),
       ),

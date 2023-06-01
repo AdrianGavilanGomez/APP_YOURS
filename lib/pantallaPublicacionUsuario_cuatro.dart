@@ -69,17 +69,18 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 80),
+        padding: EdgeInsets.symmetric(horizontal: 45, vertical: 0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 40,
+              ),
               Container(
                 child: Image.asset('assets/images/letras_yourss.png'),
-                width: 209,
-                height: 36,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               const Text(
                 'SPOTIFY CAMP NOU',
                 style: TextStyle(
@@ -89,7 +90,8 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
                 ),
               ),
               const SizedBox(height: 30),
-              Container(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset('assets/images/Spotify_CampNou.png'),
               ),
               Container(
@@ -106,7 +108,7 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
                 ),
               ),
               Transform.translate(
-                offset: Offset(-90, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-85, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -124,7 +126,7 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
               ),
               const SizedBox(height: 0),
               Transform.translate(
-                offset: Offset(-50, -20),
+                offset: Offset(-45, -20),
                 child: const Text(
                   'Que partidazoo! Visca el Barçaaa.',
                 ),
@@ -152,7 +154,7 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
                 ),
               ),
               Transform.translate(
-                offset: Offset(-10, -70), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(0, -65), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -169,7 +171,7 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -20),
+                offset: Offset(-90, -20),
                 child: const Text(
                   'Te vi de lejos Jordi! ',
                 ),

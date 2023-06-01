@@ -150,13 +150,13 @@ class _PantallaLoginState extends State<PantallaLogin> {
                       child: const Text(
                         'REGISTRARSE',
                         style: TextStyle(
-                          color: Colors.black87,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                         ),
                       ),
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFF8E10E)),
+                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                         ),

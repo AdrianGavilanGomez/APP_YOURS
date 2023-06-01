@@ -125,7 +125,16 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.symmetric(vertical: 30, horizontal: 10),
                               hintText: ' Cuenta a otros viajeros tu experiencia',
-                              border: OutlineInputBorder(),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color.fromRGBO(146, 43, 62, 1),
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color.fromRGBO(146, 43, 62, 1),
+                                ),
+                              ),
                               alignLabelWithHint: true,
                             ),
                           ),
@@ -220,34 +229,71 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                             child: Align(
                               alignment: Alignment.center,
                               child: ElevatedButton(
-                                  onPressed: () {
-                                    showDialog(
-                                      context: context,
-                                      builder: (BuildContext context) {
-                                        String newAddress = '';
+                                onPressed: () {
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      String newAddress = '';
 
-                                        return AlertDialog(
-                                          title: const Text('Agregar dirección'),
-                                          content: TextField(
-                                            onChanged: (value) {
-                                              newAddress = value;
+                                      return AlertDialog(
+                                        title: const Text('Agregar dirección'),
+                                        content: TextField(
+                                          onChanged: (value) {
+                                            newAddress = value;
+                                          },
+                                        ),
+                                        actions: [
+                                          ElevatedButton(
+                                            onPressed: () {
+                                              addAddress(newAddress);
+                                              Navigator.of(context).pop();
                                             },
-                                          ),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () {
-                                                addAddress(newAddress);
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: const Text('Agregar'),
+                                            child: const Text(
+                                              'Agregar',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  },
-                                  child: const Text('AGREGAR DIRECCIÓN'),
+                                            style: ButtonStyle(
+                                              backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                                RoundedRectangleBorder(
+                                                  borderRadius: BorderRadius.circular(30),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                                child: const Text(
+                                  'AGREGAR DIRECCIÓN',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
                                 ),
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                  ),
+                                  textStyle: MaterialStateProperty.all<TextStyle>(
+                                    TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -293,18 +339,31 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
               const SizedBox(height: 15),
               ElevatedButton(
                 onPressed: () {
-                  // accion del buton
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => PantallaFeed()),
                   );
                 },
-                child: const Text('PUBLICAR'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF922B3E),
-                  textStyle: const TextStyle(
-                    color: Colors.black,
+                child: const Text(
+                  'PUBLICAR',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
+                  ),
+                ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  textStyle: MaterialStateProperty.all<TextStyle>(
+                    TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                    ),
                   ),
                 ),
               ),
@@ -317,9 +376,10 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
+        unselectedItemColor: Colors.white,
         currentIndex: _currentIndex, // Establecer el índice actual
         onTap: _navigateToScreen, // Llamar a la función al hacer clic
+        backgroundColor: Color.fromRGBO(146, 43, 62, 1), // Cambia el color aquí
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

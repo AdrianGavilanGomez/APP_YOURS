@@ -52,17 +52,31 @@ class ForgotPassword extends StatelessWidget {
               const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  // accion del buton
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => PantallaLogin()),
                   );
                 },
-                child: const Text('SIGUIENTE'),
-                style: ElevatedButton.styleFrom(
-                  textStyle: const TextStyle(
-                    color: Colors.black,
+                child: const Text(
+                  'SIGUIENTE',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                     fontSize: 25,
+                  ),
+                ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  textStyle: MaterialStateProperty.all<TextStyle>(
+                    TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                    ),
                   ),
                 ),
               ),

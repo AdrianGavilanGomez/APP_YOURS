@@ -127,34 +127,74 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 20), //agregar 20pix de espacio
             ElevatedButton(
               onPressed: () {
-                // accion del boton
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PantallaLogin()),
                 );
               },
-              child: const Text('INICIAR SESIÓN'),
-              style: ElevatedButton.styleFrom(
-                textStyle: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 25,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0), // Aumenta el valor del padding según tus necesidades
+                child: const Text(
+                  'INICIAR SESIÓN',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20, // Puedes ajustar el tamaño del texto aquí
+                  ),
+                ),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  const EdgeInsets.all(16.0), // Aumenta el valor del padding según tus necesidades
+                ),
+                textStyle: MaterialStateProperty.all<TextStyle>(
+                  TextStyle(
+                    color: Colors.black,
+                    fontSize: 20, // Puedes ajustar el tamaño del texto aquí
+                  ),
                 ),
               ),
             ),
-            const SizedBox(height: 10), //agregar 20pix de espacio
+            const SizedBox(height: 15), //agregar 20pix de espacio
             ElevatedButton(
               onPressed: () {
-                // accion del boton
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PantallaRegistro()),
                 );
               },
-              child: const Text('CREAR CUENTA'),
-              style: ElevatedButton.styleFrom(
-                textStyle: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 25,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(28, 0, 28, 0), // Aumenta el valor del padding según tus necesidades
+                child: const Text(
+                  'REGISTRARSE',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20, // Puedes ajustar el tamaño del texto aquí
+                  ),
+                ),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  const EdgeInsets.all(16.0), // Aumenta el valor del padding según tus necesidades
+                ),
+                textStyle: MaterialStateProperty.all<TextStyle>(
+                  TextStyle(
+                    color: Colors.black,
+                    fontSize: 20, // Puedes ajustar el tamaño del texto aquí
+                  ),
                 ),
               ),
             ),

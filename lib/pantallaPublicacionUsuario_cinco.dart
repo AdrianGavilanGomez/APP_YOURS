@@ -70,17 +70,18 @@ class _PantallaPublicacionUsuario_cincoState extends State<PantallaPublicacionUs
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 80),
+        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 40,
+              ),
               Container(
                 child: Image.asset('assets/images/letras_yourss.png'),
-                width: 209,
-                height: 36,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               const Text(
                 'PARK GUELL',
                 style: TextStyle(
@@ -90,7 +91,8 @@ class _PantallaPublicacionUsuario_cincoState extends State<PantallaPublicacionUs
                 ),
               ),
               const SizedBox(height: 30),
-              Container(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
                 child: Image.asset('assets/images/Park_Guell.png'),
               ),
               Container(
@@ -107,7 +109,7 @@ class _PantallaPublicacionUsuario_cincoState extends State<PantallaPublicacionUs
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-70, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -125,7 +127,7 @@ class _PantallaPublicacionUsuario_cincoState extends State<PantallaPublicacionUs
               ),
               const SizedBox(height: 0),
               Transform.translate(
-                offset: Offset(5, -20),
+                offset: Offset(12, -20),
                 child: const Text(
                   'Que maravilla el Park Guell! Un sitio increiblemente precioso con mucho arte y estructuras.',
                 ),
@@ -153,7 +155,7 @@ class _PantallaPublicacionUsuario_cincoState extends State<PantallaPublicacionUs
                 ),
               ),
               Transform.translate(
-                offset: Offset(-20, -70), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-15, -65), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -170,7 +172,7 @@ class _PantallaPublicacionUsuario_cincoState extends State<PantallaPublicacionUs
                 ),
               ),
               Transform.translate(
-                offset: Offset(-70, -20),
+                offset: Offset(-75, -20),
                 child: const Text(
                   'Hay unas vistas inreibles! ',
                 ),

@@ -6,6 +6,7 @@ import 'package:app_yours/pantallaPerfilUsuario.dart';
 import 'package:app_yours/pantallaPerfilUsuario_cinco.dart';
 import 'package:app_yours/pantallaPerfilUsuario_cuatro.dart';
 import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
+import 'package:app_yours/pantallaPerfilUsuario_seis.dart';
 import 'package:app_yours/pantallaPerfilUsuario_tres.dart';
 import 'package:app_yours/pantallaPublicacionUsuario.dart';
 import 'package:app_yours/pantallaPublicacionUsuario_cinco.dart';
@@ -79,11 +80,14 @@ class _PantallaFeedState extends State<PantallaFeed> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 60),
+        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 40,
+              ),
               Container(
                 child: Image.asset('assets/images/letras_yourss.png'),
               ),
@@ -96,7 +100,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 20),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -153,7 +157,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   'El otro dia fui a Sagrada Familia. Ha sido una autentica maravilla y os la recomiendo, es una experiencia unica.',
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 45),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -170,7 +174,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 width: 70, // Establece el ancho deseado
                 height: 70, // Establece la altura deseada
                 child: Transform.translate(
-                  offset: Offset(-120, -220), // Cambia los valores para mover la imagen
+                  offset: Offset(-120, -225), // Cambia los valores para mover la imagen
                   child: ClipOval(
                     child: Image.asset(
                       'assets/images/Adri.png',
@@ -180,7 +184,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
-                offset: Offset(-80, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-80, -55), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -196,8 +200,6 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   ),
                 ),
               ),
-
-              const SizedBox(height: 0),
               Transform.translate(
                 offset: Offset(10, -30),
                 child: const Text(
@@ -247,9 +249,8 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   ),
                 ),
               ),
-              const SizedBox(height: 0),
               Transform.translate(
-                offset: Offset(10, -30),
+                offset: Offset(7, -30),
                 child: const Text(
                   'El otro dia fui al Maremagnum.Se vive un ambiente muy refrescante con muchas cosas a hacer y os la recomiendo, es un lugar muy bonito de visitar.',
                 ),
@@ -379,12 +380,12 @@ class _PantallaFeedState extends State<PantallaFeed> {
                 ),
               ),
               Transform.translate(
-                offset: Offset(-70, -50), // Cambia el valor vertical para mover el texto hacia arriba
+                offset: Offset(-65, -50), // Cambia el valor vertical para mover el texto hacia arriba
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario()),
+                      MaterialPageRoute(builder: (context) => PantallaPerfilUsuario_seis()),
                     );
                   },
                   child: Text(
@@ -402,12 +403,16 @@ class _PantallaFeedState extends State<PantallaFeed> {
                   ),
                 ),
               const SizedBox(height: 50),
-              Container(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaPublicacionUsuario()),
+                  );
+                },
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.asset(
-                    'assets/images/sagrada_familiaa.png',
-                  ),
+                  child: Image.asset('assets/images/sagrada_familiaa.png'),
                 ),
               ),
               Container(
@@ -425,11 +430,18 @@ class _PantallaFeedState extends State<PantallaFeed> {
               ),
               Transform.translate(
                 offset: Offset(-75, -50), // Cambia el valor vertical para mover el texto hacia arriba
-                child: Text(
-                  '@ivangallegofernandez',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PantallaPerfil()),
+                    );
+                  },
+                  child: Text(
+                    '@ivangallegofernandez',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -448,10 +460,11 @@ class _PantallaFeedState extends State<PantallaFeed> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.orange,
-        unselectedItemColor: Colors.black,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
         currentIndex: _currentIndex, // Establecer el índice actual
         onTap: _navigateToScreen, // Llamar a la función al hacer clic
+        backgroundColor: Color.fromRGBO(146, 43, 62, 1), // Cambia el color aquí
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
