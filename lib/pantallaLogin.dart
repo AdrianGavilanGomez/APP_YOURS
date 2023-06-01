@@ -1,16 +1,10 @@
-import 'package:app_yours/forgotPassword.dart';
-import 'package:app_yours/main.dart';
-import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaFeed.dart';
-import 'package:app_yours/pantallaPerfil.dart';
-import 'package:app_yours/pantallaPerfilUsuario.dart';
-import 'package:app_yours/pantallaPerfilUsuario_dos.dart';
-import 'package:app_yours/pantallaPerfilUsuario_tres.dart';
-import 'package:app_yours/pantallaPublicacionUsuario.dart';
 import 'package:app_yours/pantallaRegistro.dart';
-import 'package:app_yours/reusable_widgets/reusable_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import 'forgotPassword.dart';
+import 'main.dart';
 
 class PantallaLogin extends StatefulWidget {
   const PantallaLogin({Key? key}) : super(key: key);
@@ -76,150 +70,173 @@ class _PantallaLoginState extends State<PantallaLogin> {
     );
   }
 
+  void showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Error'),
+          content: Text(
+            message,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(
+                'OK',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromRGBO(255, 240, 245, 1),
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 100), //establecemos el padding horizontal
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 100),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
                     MaterialPageRoute(builder: (context) => MyApp()),
-                    );
+                  );
                 },
-                  child: Image.asset('assets/images/letras_yourss.png'),
-                ),
-                const SizedBox(height: 90),
-                reusableTextField("Correo electrónico", Icons.email, false, _emailTextController),
-                const SizedBox(
-                  height: 10,
-                ),
-                /*const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Correo electrónico',
-                    prefixIcon: Icon(Icons.email),
-                  ),
-                ),*/
-                reusableTextField("Contraseña", Icons.lock, true, _passwordTextController),
-                const SizedBox(height: 20),
-                /*TextField(
-                  obscureText: _obscureText,
-                  decoration: InputDecoration(
-                    labelText: 'Contraseña',
-                    prefixIcon: Icon(Icons.lock),
-                    suffixIcon: IconButton(
-                      icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
-                      onPressed: () {
-                        setState(() {
-                          _obscureText = !_obscureText;
-                        });
-                      },
-                    ),
-                  ),
-                ),*/
-                const SizedBox(height: 10), // Añade un espacio entre el Text y el TextField
-                GestureDetector(
-                  onTap: () {
-                    // Acción al presionar el texto
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ForgotPassword()),
-                    );
-                  },
-                  child: const Text(
-                    '¿HAS OLVIDADO TU CONTRASEÑA?',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.black,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 40), //agregar 20pix de espac
-                /*ElevatedButton(
-                  onPressed: () {
-                    // accion del buton
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => PantallaFeed()),
-                    );
-                  },
-                  child: const Text('INICIAR SESIÓN'),
-                  style: ElevatedButton.styleFrom(
-                    textStyle: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                    ),
-                  ),
-                ),*/
-                firebaseUIButton(context, "INICIAR SESIÓN", () {
-                  FirebaseAuth.instance
-                      .signInWithEmailAndPassword(
-                      email: _emailTextController.text,
-                      password: _passwordTextController.text)
-                      .then((value) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => PantallaFeed()));
-                  }).onError((error, stackTrace) {
-                    print("Error ${error.toString()}");
-                  });
-                }),
-                const SizedBox(height: 50), //agregamos distancia de 80pix
-                const Text(
-                  '¿NO ESTÁS REGISTRADO?',
+                child: Image.asset('assets/images/letras_yourss.png'),
+              ),
+              const SizedBox(height: 90),
+              reusableTextField("Correo electrónico", Icons.email, false, _emailTextController),
+              const SizedBox(height: 10),
+              reusableTextField("Contraseña", Icons.lock, true, _passwordTextController),
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ForgotPassword()),
+                  );
+                },
+                child: const Text(
+                  '¿HAS OLVIDADO TU CONTRASEÑA?',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                   ),
                 ),
-                const SizedBox(height: 10), //agregamos distancia de 10pix
-                GestureDetector(
-                  onTap: () {
+              ),
+              const SizedBox(height: 40),
+              ElevatedButton(
+                onPressed: () {
+                  FirebaseAuth.instance
+                      .signInWithEmailAndPassword(
+                      email: _emailTextController.text,
+                      password: _passwordTextController.text)
+                      .then((value) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PantallaRegistro()),
+                      MaterialPageRoute(builder: (context) => PantallaFeed()),
                     );
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 50,
-                    margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => PantallaRegistro()),
-                        );
-                      },
-                      child: const Text(
-                        'REGISTRARSE',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
+                  }).catchError((error) {
+                    String errorMessage = 'Error al iniciar sesión';
+                    if (error is FirebaseAuthException) {
+                      if (error.code == 'user-not-found') {
+                        errorMessage = 'Correo electrónico no encontrado';
+                      } else if (error.code == 'wrong-password') {
+                        errorMessage = 'Contraseña incorrecta';
+                      }
+                    }
+                    showErrorDialog(errorMessage);
+                  });
+                },
+                child: const Text('INICIAR SESIÓN'),
+                style: ButtonStyle(
+                  textStyle: MaterialStateProperty.all<TextStyle>(
+                    const TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                    const EdgeInsets.fromLTRB(85, 15, 85, 15),
+                  ),
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    Color.fromRGBO(146, 43, 62, 1),
+                  ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 50),
+              const Text(
+                '¿NO ESTÁS REGISTRADO?',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.black,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+              const SizedBox(height: 10),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PantallaRegistro()),
+                  );
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 50,
+                  margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PantallaRegistro()),
+                      );
+                    },
+                    child: const Text(
+                      'REGISTRARSE',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
                       ),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                        ),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor:
+                      MaterialStateProperty.all<Color>(Color.fromRGBO(146, 43, 62, 1)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        )
+        ),
+      ),
     );
   }
 }

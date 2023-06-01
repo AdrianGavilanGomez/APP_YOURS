@@ -72,7 +72,7 @@ class _PantallaPublicacionUsuario_seisState extends State<PantallaPublicacionUsu
     return Scaffold(
       backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 48, vertical: 0),
+        padding: EdgeInsets.symmetric(horizontal: 45, vertical: 0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
