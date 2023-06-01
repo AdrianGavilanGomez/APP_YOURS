@@ -11,6 +11,7 @@ class ForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 35, vertical: 90), //establecemos el padding horizontal
         child: SingleChildScrollView(
@@ -45,8 +46,21 @@ class ForgotPassword extends StatelessWidget {
               ),
               const SizedBox(height: 40), // Añade un espacio entre el Text y el TextField
               TextField(
+                cursorColor: Color.fromRGBO(146, 43, 62, 1),
                 decoration: InputDecoration(
                   labelText: 'Introduce tu dirección de correo electrónico',
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Color.fromRGBO(146, 43, 62, 1),
+                  ),
+                  labelStyle: TextStyle(
+                    color: Color.fromRGBO(146, 43, 62, 1),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromRGBO(146, 43, 62, 1),
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 30),

@@ -3,6 +3,8 @@ import 'package:app_yours/pantallaAddPost.dart';
 import 'package:app_yours/pantallaFeed.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaRegistro.dart';
+import 'package:app_yours/pantallaSeguidores.dart';
+import 'package:app_yours/pantallaSeguidos.dart';
 import 'package:app_yours/pantallaSettings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +44,6 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
         );
         break;
       case 2:
-      // Navegar a la pantalla Add (pantalla actual)
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => PantallaAddPost()),
@@ -68,6 +69,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 40),
         child: Column(
@@ -88,25 +90,33 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
               child: Row(
                 children: [
                   Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          'Seguidors',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PantallaSeguidores()),
+                        );
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            'Seguidors',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        const Text(
-                          '1044',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          const SizedBox(height: 4),
+                          const Text(
+                            '1044',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   const Spacer(),
@@ -118,29 +128,37 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
                   ),
                   const Spacer(),
                   Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          'Siguiendo',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PantallaSeguidos()),
+                        );
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            'Siguiendo',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        const Text(
-                          '483',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                          const SizedBox(height: 4),
+                          const Text(
+                            '483',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
-              )
+              ),
             ),
             const Text(
               'Ivan Gallego',
@@ -207,7 +225,7 @@ class _PantallaPerfilState extends State<PantallaPerfil> {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
               ),
-              itemCount: 9,
+              itemCount: 15,
               itemBuilder: (context, index) {
                 return Image.asset(
                   'assets/images/foto_Ivan${index+1}.png',

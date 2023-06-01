@@ -16,6 +16,7 @@ class _PantallaPerfilUsuario_seisState extends State<PantallaPerfilUsuario_seis>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 40),
         child: Column(

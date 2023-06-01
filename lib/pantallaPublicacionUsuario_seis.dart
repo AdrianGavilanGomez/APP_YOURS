@@ -68,6 +68,7 @@ class _PantallaPublicacionUsuario_seisState extends State<PantallaPublicacionUsu
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 48, vertical: 0),
         child: SingleChildScrollView(

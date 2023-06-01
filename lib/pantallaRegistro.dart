@@ -25,6 +25,7 @@ class _PantallaRegistroState extends State<PantallaRegistro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromRGBO(255, 240, 245, 1),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 35, vertical: 90), //establecemos el padding horizontal
           child: SingleChildScrollView(

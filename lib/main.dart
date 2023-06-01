@@ -103,6 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

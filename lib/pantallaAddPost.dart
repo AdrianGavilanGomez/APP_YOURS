@@ -80,6 +80,7 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 40),
         child: Center(
@@ -116,6 +117,7 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                           ),
                           const SizedBox(height: 10),
                           TextField(
+                            cursorColor: Color.fromRGBO(146, 43, 62, 1),
                             maxLines: 4,
                             textAlign: TextAlign.left,
                             textAlignVertical: TextAlignVertical.top,
@@ -238,9 +240,17 @@ class _PantallaAddPostState extends State<PantallaAddPost> {
                                       return AlertDialog(
                                         title: const Text('Agregar dirección'),
                                         content: TextField(
+                                          cursorColor: Color.fromRGBO(146, 43, 62, 1),
                                           onChanged: (value) {
                                             newAddress = value;
                                           },
+                                          decoration: InputDecoration(
+                                            focusedBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Color.fromRGBO(146, 43, 62, 1),
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                         actions: [
                                           ElevatedButton(

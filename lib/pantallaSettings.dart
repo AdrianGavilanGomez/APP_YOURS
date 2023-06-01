@@ -236,6 +236,7 @@ class _PantallaSettingsState extends State<PantallaSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 40, horizontal: 20),
         children: [

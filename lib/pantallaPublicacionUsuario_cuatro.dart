@@ -68,6 +68,7 @@ class _PantallaPublicacionUsuario_cuatroState extends State<PantallaPublicacionU
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 45, vertical: 0),
         child: SingleChildScrollView(

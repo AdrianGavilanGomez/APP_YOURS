@@ -1,5 +1,6 @@
 import 'package:app_yours/main.dart';
 import 'package:app_yours/pantallaAddPost.dart';
+import 'package:app_yours/pantallaBuscador.dart';
 import 'package:app_yours/pantallaLogin.dart';
 import 'package:app_yours/pantallaPerfil.dart';
 import 'package:app_yours/pantallaPerfilUsuario.dart';
@@ -49,7 +50,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
       // Navegar a la pantalla Search
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PantallaLogin()),
+          MaterialPageRoute(builder: (context) => PantallaBuscador()),
         );
         break;
       case 2:
@@ -79,6 +80,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 240, 245, 1),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 35, vertical: 0),
         child: SingleChildScrollView(
@@ -203,7 +205,7 @@ class _PantallaFeedState extends State<PantallaFeed> {
               Transform.translate(
                 offset: Offset(10, -30),
                 child: const Text(
-                  'El otro dia fui a la Pedrera. Habia un poco de cola pero a valido la espera, es un lugar muy bonito tanto fuera como por dentro,lo recomiendo mucho.',
+                  'El otro día fui a la Pedrera. Había un poco de cola pero ha valido la espera, es un lugar muy bonito tanto por fuera como por dentro,lo recomiendo mucho.',
                 ),
               ),
               const SizedBox(height:50),
